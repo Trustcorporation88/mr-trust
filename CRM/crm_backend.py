@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-"""SQLite backend for the MR TRUST CRM app."""
-=======
 """SQLite backend for the Mr.Holmes CRM app."""
->>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
 
 from __future__ import annotations
 
