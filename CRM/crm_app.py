@@ -360,6 +360,22 @@ st.markdown(
         opacity: 1 !important;
     }
 
+    input[type="password"]::-ms-reveal,
+    input[type="password"]::-ms-clear {
+        display: none;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    select:-webkit-autofill {
+        -webkit-text-fill-color: #f8fafc !important;
+        -webkit-box-shadow: 0 0 0 1000px rgba(18, 18, 27, 0.98) inset !important;
+        box-shadow: 0 0 0 1000px rgba(18, 18, 27, 0.98) inset !important;
+        transition: background-color 9999s ease-in-out 0s;
+    }
+
     [data-testid="stTextInput"] input::placeholder,
     [data-testid="stTextArea"] textarea::placeholder,
     input[type="text"]::placeholder,
@@ -590,6 +606,34 @@ def ingest_message(uploaded_file) -> str:
 
 
 def render_navigation_strip(allowed_sections: list[str], active_section: str) -> None:
+    option_map = {
+        f"{_section_icon(section)} {section}": section
+        for section in allowed_sections
+    }
+    current_label = next(
+        (label for label, value in option_map.items() if value == active_section),
+        next(iter(option_map.keys())),
+    )
+
+    if st.session_state.get("crm_top_nav") not in option_map:
+        st.session_state["crm_top_nav"] = current_label
+
+    selected_label = st.radio(
+        "Navegacao rapida",
+        list(option_map.keys()),
+        key="crm_top_nav",
+        horizontal=True,
+        label_visibility="collapsed",
+    )
+    selected_section = option_map[selected_label]
+    if selected_section != st.session_state.get("crm_section"):
+        _push_section_history(st.session_state.get("crm_section", selected_section))
+        st.session_state["crm_section"] = selected_section
+        st.session_state["crm_nav_radio"] = selected_section
+        st.rerun()
+
+
+def _section_icon(section: str) -> str:
     section_icons = {
         "Visao Executiva": "📊",
         "Atendimento": "🎧",
@@ -600,11 +644,7 @@ def render_navigation_strip(allowed_sections: list[str], active_section: str) ->
         "Benchmark": "🧠",
         "Admin": "🛡️",
     }
-    chips = "".join(
-        f'<span class="top-nav-pill"><span class="nav-icon">{section_icons.get(section, "📌")}</span> {section}</span>'
-        for section in allowed_sections
-    )
-    st.markdown(f'<div class="top-nav-strip">{chips}</div>', unsafe_allow_html=True)
+    return section_icons.get(section, "📌")
 
 
 def _push_section_history(current_section: str) -> None:
@@ -621,9 +661,11 @@ def _goto_home(allowed_sections: list[str]) -> None:
     if current != target:
         _push_section_history(current)
         st.session_state["crm_section"] = target
+    st.session_state["crm_nav_radio"] = target
+    st.session_state["crm_top_nav"] = f"{_section_icon(target)} {target}"
 
 
-def _go_back(allowed_sections: list[str]) -> None:
+def _go_back(allowed_sections: list[str]) -> bool:
     history = st.session_state.get("crm_section_history", [])
     current = st.session_state.get("crm_section", allowed_sections[0])
     while history:
@@ -631,26 +673,26 @@ def _go_back(allowed_sections: list[str]) -> None:
         if target in allowed_sections and target != current:
             st.session_state["crm_section_history"] = history
             st.session_state["crm_section"] = target
-            return
+            st.session_state["crm_nav_radio"] = target
+            st.session_state["crm_top_nav"] = f"{_section_icon(target)} {target}"
+            return True
     st.session_state["crm_section_history"] = history
+    return False
 
 
 def render_nav_toolbar(allowed_sections: list[str]) -> None:
     current = st.session_state.get("crm_section", allowed_sections[0])
-    history = st.session_state.get("crm_section_history", [])
-    target_home = "Visao Executiva" if "Visao Executiva" in allowed_sections else allowed_sections[0]
-    can_go_home = current != target_home
-    can_go_back = any(item in allowed_sections and item != current for item in history)
 
     col1, col2, col3 = st.columns([0.12, 0.12, 0.76])
     with col1:
-        if st.button("🏠 Home", key="top_home_btn", use_container_width=True, disabled=not can_go_home):
+        if st.button("🏠 Home", key="top_home_btn", use_container_width=True):
             _goto_home(allowed_sections)
             st.rerun()
     with col2:
-        if st.button("⬅ Voltar", key="top_back_btn", use_container_width=True, disabled=not can_go_back):
-            _go_back(allowed_sections)
-            st.rerun()
+        if st.button("⬅ Voltar", key="top_back_btn", use_container_width=True):
+            if _go_back(allowed_sections):
+                st.rerun()
+            st.info("Sem navegacao anterior para voltar.")
     with col3:
         st.markdown(
             f'<div class="nav-toolbar"><span class="nav-toolbar-pill">Seção atual: {current}</span></div>',
@@ -708,6 +750,9 @@ with st.sidebar:
         st.session_state["crm_section"] = "Visao Executiva" if "Visao Executiva" in allowed_sections else allowed_sections[0]
     if "crm_section_history" not in st.session_state:
         st.session_state["crm_section_history"] = []
+    if "crm_top_nav" not in st.session_state:
+        current = st.session_state["crm_section"]
+        st.session_state["crm_top_nav"] = f"{_section_icon(current)} {current}"
 
     nav_a, nav_b = st.columns(2)
     with nav_a:
@@ -715,13 +760,10 @@ with st.sidebar:
             _goto_home(allowed_sections)
             st.rerun()
     with nav_b:
-        can_go_back_side = any(
-            item in allowed_sections and item != st.session_state["crm_section"]
-            for item in st.session_state.get("crm_section_history", [])
-        )
-        if st.button("⬅ Voltar", use_container_width=True, key="side_back_btn", disabled=not can_go_back_side):
-            _go_back(allowed_sections)
-            st.rerun()
+        if st.button("⬅ Voltar", use_container_width=True, key="side_back_btn"):
+            if _go_back(allowed_sections):
+                st.rerun()
+            st.info("Sem navegacao anterior para voltar.")
 
     selected_section = st.radio(
         "Navegacao",
@@ -732,6 +774,7 @@ with st.sidebar:
     if selected_section != st.session_state["crm_section"]:
         _push_section_history(st.session_state["crm_section"])
         st.session_state["crm_section"] = selected_section
+        st.session_state["crm_top_nav"] = f"{_section_icon(selected_section)} {selected_section}"
     section = st.session_state["crm_section"]
     selected_country = st.selectbox("Mercado", ["Todos", "Brasil", "Estados Unidos"])
     selected_owner = st.selectbox("Responsavel", ["Todos"] + owner_options)

@@ -1,4 +1,4 @@
-"""MR HOLMES Web - Dashboard OSINT."""
+"""MR TRUST Web - Dashboard OSINT."""
 
 import json
 import os
@@ -11,7 +11,7 @@ import streamlit as st
 sys.path.insert(0, os.path.dirname(__file__))
 
 st.set_page_config(
-    page_title="MR HOLMES - Dashboard OSINT",
+    page_title="MR TRUST - Dashboard OSINT",
     page_icon="M",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -897,8 +897,20 @@ def inject_theme():
 
 def navigate_to(page_key: str, prefill: str | None = None):
     label_map = {item["key"]: item["label"] for item in CATALOG}
+    top_label_map = {
+        "home": "🏠 Inicio",
+        "phone": "📞 Telefone",
+        "email": "✉️ Email",
+        "domain": "🌐 Dominio",
+        "network": "🛰️ Rede",
+        "graph": "🕸️ Grafo",
+        "tools": "🧰 Ferramentas",
+        "history": "🕒 Historico",
+    }
     st.session_state["page"] = page_key
     st.session_state["sidebar_nav"] = label_map.get(page_key, "Inicio")
+    if page_key in top_label_map:
+        st.session_state["top_nav"] = top_label_map[page_key]
     if prefill:
         st.session_state[f"{page_key}_input"] = prefill
     st.rerun()
@@ -1097,7 +1109,7 @@ def render_hero():
     st.markdown(
         f"""
         <section class="hero-shell">
-            <div class="hero-kicker">MR HOLMES OSINT</div>
+            <div class="hero-kicker">MR TRUST OSINT</div>
             <h1 class="hero-title">Central OSINT unificada para investigacao digital.</h1>
             <p class="hero-subtitle">
                 Buscas de telefone, email, dominio, rede e grafo reunidas em uma operacao unica,
@@ -1111,12 +1123,33 @@ def render_hero():
 
 
 def render_top_nav():
-    items = [item for item in CATALOG if item["key"] != "home"]
-    pills = "".join(
-        f'<span class="top-nav-pill">{item["label"]}</span>'
-        for item in items[:7]
+    option_map = {
+        "🏠 Inicio": "home",
+        "📞 Telefone": "phone",
+        "✉️ Email": "email",
+        "🌐 Dominio": "domain",
+        "🛰️ Rede": "network",
+        "🕸️ Grafo": "graph",
+        "🧰 Ferramentas": "tools",
+        "🕒 Historico": "history",
+    }
+    valid_keys = {item["key"] for item in CATALOG}
+    valid_options = [label for label, key in option_map.items() if key in valid_keys]
+    current_label = next((label for label, key in option_map.items() if key == st.session_state["page"]), valid_options[0])
+
+    if st.session_state.get("top_nav") not in option_map:
+        st.session_state["top_nav"] = current_label
+
+    selected = st.radio(
+        "Navegacao principal",
+        valid_options,
+        horizontal=True,
+        key="top_nav",
+        label_visibility="collapsed",
     )
-    st.markdown(f'<div class="top-nav">{pills}</div>', unsafe_allow_html=True)
+    selected_page = option_map[selected]
+    if selected_page != st.session_state["page"]:
+        navigate_to(selected_page)
 
 
 def render_ops_strip():
@@ -1284,13 +1317,25 @@ def init_navigation():
     if "page" not in st.session_state:
         st.session_state["page"] = "home"
     label_map = {item["key"]: item["label"] for item in CATALOG}
+    top_label_map = {
+        "home": "🏠 Inicio",
+        "phone": "📞 Telefone",
+        "email": "✉️ Email",
+        "domain": "🌐 Dominio",
+        "network": "🛰️ Rede",
+        "graph": "🕸️ Grafo",
+        "tools": "🧰 Ferramentas",
+        "history": "🕒 Historico",
+    }
     if "sidebar_nav" not in st.session_state:
         st.session_state["sidebar_nav"] = label_map.get(st.session_state["page"], "Inicio")
+    if "top_nav" not in st.session_state:
+        st.session_state["top_nav"] = top_label_map.get(st.session_state["page"], "🏠 Inicio")
 
 
 def sidebar_navigation():
     with st.sidebar:
-        st.markdown("## MR HOLMES")
+        st.markdown("## MR TRUST")
         st.caption("Central OSINT para buscas e correlacao")
         options = {item["label"]: item["key"] for item in CATALOG}
         labels = list(options.keys())
@@ -1806,4 +1851,4 @@ inject_theme()
 init_navigation()
 sidebar_navigation()
 render_page()
-st.markdown('<div class="footer-note">MR HOLMES OSINT · painel investigativo operacional.</div>', unsafe_allow_html=True)
+st.markdown('<div class="footer-note">MR TRUST OSINT · painel investigativo operacional.</div>', unsafe_allow_html=True)
