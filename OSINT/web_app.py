@@ -908,9 +908,9 @@ def navigate_to(page_key: str, prefill: str | None = None):
         "history": "🕒 Historico",
     }
     st.session_state["page"] = page_key
-    st.session_state["sidebar_nav"] = label_map.get(page_key, "Inicio")
+    st.session_state["_sidebar_nav_target"] = label_map.get(page_key, "Inicio")
     if page_key in top_label_map:
-        st.session_state["top_nav"] = top_label_map[page_key]
+        st.session_state["_top_nav_target"] = top_label_map[page_key]
     if prefill:
         st.session_state[f"{page_key}_input"] = prefill
     st.rerun()
@@ -1137,14 +1137,17 @@ def render_top_nav():
     valid_options = [label for label, key in option_map.items() if key in valid_keys]
     current_label = next((label for label, key in option_map.items() if key == st.session_state["page"]), valid_options[0])
 
-    if st.session_state.get("top_nav") not in option_map:
-        st.session_state["top_nav"] = current_label
+    if "_top_nav_target" in st.session_state:
+        st.session_state["top_nav_widget"] = st.session_state.pop("_top_nav_target")
+
+    if st.session_state.get("top_nav_widget") not in option_map:
+        st.session_state["top_nav_widget"] = current_label
 
     selected = st.radio(
         "Navegacao principal",
         valid_options,
         horizontal=True,
-        key="top_nav",
+        key="top_nav_widget",
         label_visibility="collapsed",
     )
     selected_page = option_map[selected]
@@ -1327,10 +1330,10 @@ def init_navigation():
         "tools": "🧰 Ferramentas",
         "history": "🕒 Historico",
     }
-    if "sidebar_nav" not in st.session_state:
-        st.session_state["sidebar_nav"] = label_map.get(st.session_state["page"], "Inicio")
-    if "top_nav" not in st.session_state:
-        st.session_state["top_nav"] = top_label_map.get(st.session_state["page"], "🏠 Inicio")
+    if "sidebar_nav_widget" not in st.session_state:
+        st.session_state["sidebar_nav_widget"] = label_map.get(st.session_state["page"], "Inicio")
+    if "top_nav_widget" not in st.session_state:
+        st.session_state["top_nav_widget"] = top_label_map.get(st.session_state["page"], "🏠 Inicio")
 
 
 def sidebar_navigation():
@@ -1341,13 +1344,27 @@ def sidebar_navigation():
         labels = list(options.keys())
 
         current_label = next((label for label, key in options.items() if key == st.session_state["page"]), "Inicio")
-        if st.session_state.get("sidebar_nav") not in options:
-            st.session_state["sidebar_nav"] = current_label
+        if "_sidebar_nav_target" in st.session_state:
+            st.session_state["sidebar_nav_widget"] = st.session_state.pop("_sidebar_nav_target")
 
-        selected = st.radio("Navegacao", labels, key="sidebar_nav")
+        if st.session_state.get("sidebar_nav_widget") not in options:
+            st.session_state["sidebar_nav_widget"] = current_label
+
+        selected = st.radio("Navegacao", labels, key="sidebar_nav_widget")
         selected_page = options[selected]
         if selected_page != st.session_state["page"]:
             st.session_state["page"] = selected_page
+            top_label_map = {
+                "home": "🏠 Inicio",
+                "phone": "📞 Telefone",
+                "email": "✉️ Email",
+                "domain": "🌐 Dominio",
+                "network": "🛰️ Rede",
+                "graph": "🕸️ Grafo",
+                "tools": "🧰 Ferramentas",
+                "history": "🕒 Historico",
+            }
+            st.session_state["_top_nav_target"] = top_label_map.get(selected_page, "🏠 Inicio")
             st.rerun()
 
         quick = st.selectbox(
