@@ -1,4 +1,4 @@
-"""MR HOLMES CRM - persisted CRM with auth, roles and channel intake."""
+"""MR TRUST CRM - persisted CRM with auth, roles and channel intake."""
 
 from __future__ import annotations
 
@@ -59,7 +59,7 @@ BENCHMARKS = pd.DataFrame(
 
 
 st.set_page_config(
-    page_title="MR HOLMES CRM",
+    page_title="MR TRUST CRM",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -156,6 +156,12 @@ st.markdown(
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 0.08em;
+    }
+
+    .top-nav-pill .nav-icon {
+        font-size: 13px;
+        line-height: 1;
+        opacity: 1;
     }
 
     .hero {
@@ -316,6 +322,42 @@ st.markdown(
         color: #f8fafc !important;
         border: 1px solid rgba(255, 255, 255, 0.24) !important;
         border-radius: 12px !important;
+    }
+
+    [data-testid="stTextInput"] input,
+    [data-testid="stTextArea"] textarea,
+    [data-testid="stNumberInput"] input,
+    [data-testid="stDateInput"] input,
+    [data-testid="stSelectbox"] div[data-baseweb="select"] > div,
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        background: rgba(255, 255, 255, 0.06) !important;
+        color: #f8fafc !important;
+        -webkit-text-fill-color: #f8fafc !important;
+        opacity: 1 !important;
+    }
+
+    [data-testid="stTextInput"] input::placeholder,
+    [data-testid="stTextArea"] textarea::placeholder,
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder,
+    textarea::placeholder {
+        color: #d6daeb !important;
+        opacity: 0.82 !important;
+    }
+
+    .stTextInput label,
+    .stTextArea label,
+    .stNumberInput label,
+    .stDateInput label,
+    .stSelectbox label,
+    .stMultiSelect label,
+    .stRadio label,
+    .stCheckbox label,
+    .stForm label {
+        color: #e8ebff !important;
+        opacity: 1 !important;
     }
 
     .stTextInput input:focus,
@@ -526,8 +568,18 @@ def ingest_message(uploaded_file) -> str:
 
 
 def render_navigation_strip(allowed_sections: list[str], active_section: str) -> None:
+    section_icons = {
+        "Visao Executiva": "📊",
+        "Atendimento": "🎧",
+        "Canais": "📨",
+        "Clientes 360": "🧩",
+        "Pipeline": "📈",
+        "Marketing": "📣",
+        "Benchmark": "🧠",
+        "Admin": "🛡️",
+    }
     chips = "".join(
-        f'<span class="top-nav-pill">{"●" if section == active_section else "○"} {section}</span>'
+        f'<span class="top-nav-pill"><span class="nav-icon">{section_icons.get(section, "📌")}</span> {section}</span>'
         for section in allowed_sections
     )
     st.markdown(f'<div class="top-nav-strip">{chips}</div>', unsafe_allow_html=True)
@@ -569,7 +621,7 @@ owner_options = sorted(
 )
 
 with st.sidebar:
-    st.markdown("## MR HOLMES CRM")
+    st.markdown("## MR TRUST CRM")
     st.caption("Atendimento, vendas e marketing em operacao persistida.")
     st.success(f"{user['full_name']} | perfil: {user['role']}")
     if st.button("Sair", use_container_width=True):
