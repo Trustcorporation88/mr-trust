@@ -895,6 +895,15 @@ def inject_theme():
     st.markdown(THEME_CSS, unsafe_allow_html=True)
 
 
+def navigate_to(page_key: str, prefill: str | None = None):
+    label_map = {item["key"]: item["label"] for item in CATALOG}
+    st.session_state["page"] = page_key
+    st.session_state["sidebar_nav"] = label_map.get(page_key, "Inicio")
+    if prefill:
+        st.session_state[f"{page_key}_input"] = prefill
+    st.rerun()
+
+
 def card_shell(title: str, subtitle: str = ""):
     st.markdown(
         f"""
@@ -975,8 +984,7 @@ def render_service_profile_rail(service_keys, title: str, subtitle: str = ""):
                 unsafe_allow_html=True,
             )
             if st.button(f"Acessar {catalog_item['label']}", key=f"service_rail_{service_key}", use_container_width=True):
-                st.session_state["page"] = service_key
-                st.rerun()
+                navigate_to(service_key)
 
 
 def render_related_tracks(current_key: str):
@@ -1170,11 +1178,7 @@ def render_catalog_row(items, key_prefix: str = "catalog"):
             button_label = item.get("button_label", f"Abrir {item['label']}")
             button_key = item.get("button_key", f"{key_prefix}_{item['key']}_{idx}")
             if st.button(button_label, key=button_key, use_container_width=True):
-                st.session_state["page"] = item["key"]
-                prefill = item.get("prefill")
-                if prefill:
-                    st.session_state[f"{item['key']}_input"] = prefill
-                st.rerun()
+                navigate_to(item["key"], item.get("prefill"))
 
 
 def render_intel_base(base: dict, title: str = "Camada OSINT Normalizada"):
@@ -1279,6 +1283,9 @@ def render_home():
 def init_navigation():
     if "page" not in st.session_state:
         st.session_state["page"] = "home"
+    label_map = {item["key"]: item["label"] for item in CATALOG}
+    if "sidebar_nav" not in st.session_state:
+        st.session_state["sidebar_nav"] = label_map.get(st.session_state["page"], "Inicio")
 
 
 def sidebar_navigation():
@@ -1286,9 +1293,18 @@ def sidebar_navigation():
         st.markdown("## MR HOLMES")
         st.caption("Central OSINT para buscas e correlacao")
         options = {item["label"]: item["key"] for item in CATALOG}
-        current_label = next(label for label, key in options.items() if key == st.session_state["page"])
-        selected = st.radio("Navegacao", list(options.keys()), index=list(options.keys()).index(current_label))
-        st.session_state["page"] = options[selected]
+        labels = list(options.keys())
+
+        current_label = next((label for label, key in options.items() if key == st.session_state["page"]), "Inicio")
+        if st.session_state.get("sidebar_nav") not in options:
+            st.session_state["sidebar_nav"] = current_label
+
+        selected = st.radio("Navegacao", labels, key="sidebar_nav")
+        selected_page = options[selected]
+        if selected_page != st.session_state["page"]:
+            st.session_state["page"] = selected_page
+            st.rerun()
+
         quick = st.selectbox(
             "Acesso rapido",
             [item["label"] for item in CATALOG if item["key"] != "home"],
@@ -1296,8 +1312,7 @@ def sidebar_navigation():
             key="quick_jump",
         )
         if st.button("Ir para modulo", use_container_width=True, key="quick_jump_btn"):
-            st.session_state["page"] = options[quick]
-            st.rerun()
+            navigate_to(options[quick])
         st.markdown("---")
         st.caption("Atalhos rapidos")
         st.markdown("- Telefone")
