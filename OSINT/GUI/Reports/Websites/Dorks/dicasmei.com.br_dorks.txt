@@ -1,0 +1,40 @@
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:txt
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:pdf
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:log
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:doc
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:docx
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:sqlite
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:yaml
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:json
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:xls
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:xlsx
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:csv
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+filetype:md
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+intext:admin+OR+Admin
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+intext:emails+OR+Emails+OR+EMAILS
+| https://www.google.com/search?q=site:(www.dicasmei.com.br)%29+intitle:admin+OR+Admin
+| https://www.google.com/search?q=intext:(www.dicasmei.com.br+OR+dicasmei.com.br)
+| https://www.google.com/search?q=inurl:(www.dicasmei.com.br+OR+dicasmei.com.br)
+----------------------------------------------------------------------------------------------------------------------
+YANDEX-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:dicasmei.com.br
+| https://yandex.com/search/?text=site:dicasmei.com.br+mime:txt
+| https://yandex.com/search/?text=site:dicasmei.com.br+mime:pdf
+| https://yandex.com/search/?text=site:dicasmei.com.br+mime:log
+| https://yandex.com/search/?text=site:dicasmei.com.br+mime:doc
+| https://yandex.com/search/?text=site:dicasmei.com.br+mime:docx
+| https://yandex.com/search/?text=site:dicasmei.com.br+mime:sqlite
+| https://yandex.com/search/?text=site:dicasmei.com.br+mime:yaml
+| https://yandex.com/search/?text=site:dicasmei.com.br+mime:json
+| https://yandex.com/search/?text=site:dicasmei.com.br+mime:xls
+| https://yandex.com/search/?text=site:dicasmei.com.br+mime:xlsx
+| https://yandex.com/search/?text=site:dicasmei.com.br+mime:csv
+| https://yandex.com/search/?text=inurl:dicasmei.com.br
+----------------------------------------------------------------------------------------------------------------------

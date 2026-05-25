@@ -1,0 +1,779 @@
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%225514998370223%22
+| https://www.google.com/search?q=intext:(%225514998370223%22)
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:txt
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:csv
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:pdf
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:doc
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:docx
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:log
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:xls
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:(%225514998370223%22)
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:txt
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:csv
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:pdf
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:doc
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:docx
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:log
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:xls
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=site:www.instagram.com+intext:%22%225514998370223%22%22
+| https://www.google.com/search?q=site:www.twitter.com+intext:%22%225514998370223%22%22
+| https://www.google.com/search?q=site:www.facebook.com+intext:%22%225514998370223%22%22
+| https://www.google.com/search?q=site:www.vk.com+intext:%22%225514998370223%22%22
+| https://www.google.com/search?q=site:www.linkedin.com+intext:%22%225514998370223%22%22
+----------------------------------------------------------------------------------------------------------------------
+YANDEX-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=5514998370223
+| https://yandex.com/search/?text=(5514998370223)mime:txt
+| https://yandex.com/search/?text=(5514998370223)mime:pdf
+| https://yandex.com/search/?text=(5514998370223)mime:csv
+| https://yandex.com/search/?text=(5514998370223)mime:doc
+| https://yandex.com/search/?text=(5514998370223)mime:log
+| https://yandex.com/search/?text=(5514998370223)mime:docx
+| https://yandex.com/search/?text=(5514998370223)mime:xls
+| https://yandex.com/search/?text=(5514998370223)mime:xlsx
+| https://yandex.com/search/?text=(5514998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:5514998370223
+| https://yandex.com/search/?text=title:(5514998370223)mime:txt
+| https://yandex.com/search/?text=title:(5514998370223)mime:pdf
+| https://yandex.com/search/?text=title:(5514998370223)mime:csv
+| https://yandex.com/search/?text=title:(5514998370223)mime:doc
+| https://yandex.com/search/?text=title:(5514998370223)mime:docx
+| https://yandex.com/search/?text=title:(5514998370223)mime:log
+| https://yandex.com/search/?text=title:(5514998370223)mime:xls
+| https://yandex.com/search/?text=title:(5514998370223)mime:xlsx
+| https://yandex.com/search/?text=title:(5514998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:instagram.com+"5514998370223"
+| https://yandex.com/search/?text=site:twitter.com+"5514998370223"
+| https://yandex.com/search/?text=site:facebook.com+"5514998370223"
+| https://yandex.com/search/?text=site:vk.com+"5514998370223"
+| https://yandex.com/search/?text=site:linkedin.com+"5514998370223"
+----------------------------------------------------------------------------------------------------------------------
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%22(14)+998370223%22
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:txt
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:csv
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:pdf
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:doc
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:docx
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:log
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:xls
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:txt
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:csv
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:pdf
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:doc
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:docx
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:log
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:xls
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=site:www.instagram.com+intext:%22%22(14) 998370223%22%22
+| https://www.google.com/search?q=site:www.twitter.com+intext:%22%22(14) 998370223%22%22
+| https://www.google.com/search?q=site:www.facebook.com+intext:%22%22(14) 998370223%22%22
+| https://www.google.com/search?q=site:www.vk.com+intext:%22%22(14) 998370223%22%22
+| https://www.google.com/search?q=site:www.linkedin.com+intext:%22%22(14) 998370223%22%22
+----------------------------------------------------------------------------------------------------------------------
+YANDEX-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=(14)+998370223
+| https://yandex.com/search/?text=((14)+998370223)mime:txt
+| https://yandex.com/search/?text=((14)+998370223)mime:pdf
+| https://yandex.com/search/?text=((14)+998370223)mime:csv
+| https://yandex.com/search/?text=((14)+998370223)mime:doc
+| https://yandex.com/search/?text=((14)+998370223)mime:log
+| https://yandex.com/search/?text=((14)+998370223)mime:docx
+| https://yandex.com/search/?text=((14)+998370223)mime:xls
+| https://yandex.com/search/?text=((14)+998370223)mime:xlsx
+| https://yandex.com/search/?text=((14)+998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:(14)+998370223
+| https://yandex.com/search/?text=title:((14)+998370223)mime:txt
+| https://yandex.com/search/?text=title:((14)+998370223)mime:pdf
+| https://yandex.com/search/?text=title:((14)+998370223)mime:csv
+| https://yandex.com/search/?text=title:((14)+998370223)mime:doc
+| https://yandex.com/search/?text=title:((14)+998370223)mime:docx
+| https://yandex.com/search/?text=title:((14)+998370223)mime:log
+| https://yandex.com/search/?text=title:((14)+998370223)mime:xls
+| https://yandex.com/search/?text=title:((14)+998370223)mime:xlsx
+| https://yandex.com/search/?text=title:((14)+998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:instagram.com+"(14) 998370223"
+| https://yandex.com/search/?text=site:twitter.com+"(14) 998370223"
+| https://yandex.com/search/?text=site:facebook.com+"(14) 998370223"
+| https://yandex.com/search/?text=site:vk.com+"(14) 998370223"
+| https://yandex.com/search/?text=site:linkedin.com+"(14) 998370223"
+----------------------------------------------------------------------------------------------------------------------
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%22014998370223%22
+| https://www.google.com/search?q=intext:(%22014998370223%22)
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:txt
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:csv
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:pdf
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:doc
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:docx
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:log
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:xls
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:(%22014998370223%22)
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:txt
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:csv
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:pdf
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:doc
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:docx
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:log
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:xls
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=site:www.instagram.com+intext:%22%22014998370223%22%22
+| https://www.google.com/search?q=site:www.twitter.com+intext:%22%22014998370223%22%22
+| https://www.google.com/search?q=site:www.facebook.com+intext:%22%22014998370223%22%22
+| https://www.google.com/search?q=site:www.vk.com+intext:%22%22014998370223%22%22
+| https://www.google.com/search?q=site:www.linkedin.com+intext:%22%22014998370223%22%22
+----------------------------------------------------------------------------------------------------------------------
+YANDEX-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=014998370223
+| https://yandex.com/search/?text=(014998370223)mime:txt
+| https://yandex.com/search/?text=(014998370223)mime:pdf
+| https://yandex.com/search/?text=(014998370223)mime:csv
+| https://yandex.com/search/?text=(014998370223)mime:doc
+| https://yandex.com/search/?text=(014998370223)mime:log
+| https://yandex.com/search/?text=(014998370223)mime:docx
+| https://yandex.com/search/?text=(014998370223)mime:xls
+| https://yandex.com/search/?text=(014998370223)mime:xlsx
+| https://yandex.com/search/?text=(014998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:014998370223
+| https://yandex.com/search/?text=title:(014998370223)mime:txt
+| https://yandex.com/search/?text=title:(014998370223)mime:pdf
+| https://yandex.com/search/?text=title:(014998370223)mime:csv
+| https://yandex.com/search/?text=title:(014998370223)mime:doc
+| https://yandex.com/search/?text=title:(014998370223)mime:docx
+| https://yandex.com/search/?text=title:(014998370223)mime:log
+| https://yandex.com/search/?text=title:(014998370223)mime:xls
+| https://yandex.com/search/?text=title:(014998370223)mime:xlsx
+| https://yandex.com/search/?text=title:(014998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:instagram.com+"014998370223"
+| https://yandex.com/search/?text=site:twitter.com+"014998370223"
+| https://yandex.com/search/?text=site:facebook.com+"014998370223"
+| https://yandex.com/search/?text=site:vk.com+"014998370223"
+| https://yandex.com/search/?text=site:linkedin.com+"014998370223"
+----------------------------------------------------------------------------------------------------------------------
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%2214998370223%22
+| https://www.google.com/search?q=intext:(%2214998370223%22)
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:txt
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:csv
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:pdf
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:doc
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:docx
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:log
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:xls
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:(%2214998370223%22)
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:txt
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:csv
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:pdf
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:doc
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:docx
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:log
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:xls
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=site:www.instagram.com+intext:%22%2214998370223%22%22
+| https://www.google.com/search?q=site:www.twitter.com+intext:%22%2214998370223%22%22
+| https://www.google.com/search?q=site:www.facebook.com+intext:%22%2214998370223%22%22
+| https://www.google.com/search?q=site:www.vk.com+intext:%22%2214998370223%22%22
+| https://www.google.com/search?q=site:www.linkedin.com+intext:%22%2214998370223%22%22
+----------------------------------------------------------------------------------------------------------------------
+YANDEX-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=14998370223
+| https://yandex.com/search/?text=(14998370223)mime:txt
+| https://yandex.com/search/?text=(14998370223)mime:pdf
+| https://yandex.com/search/?text=(14998370223)mime:csv
+| https://yandex.com/search/?text=(14998370223)mime:doc
+| https://yandex.com/search/?text=(14998370223)mime:log
+| https://yandex.com/search/?text=(14998370223)mime:docx
+| https://yandex.com/search/?text=(14998370223)mime:xls
+| https://yandex.com/search/?text=(14998370223)mime:xlsx
+| https://yandex.com/search/?text=(14998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:14998370223
+| https://yandex.com/search/?text=title:(14998370223)mime:txt
+| https://yandex.com/search/?text=title:(14998370223)mime:pdf
+| https://yandex.com/search/?text=title:(14998370223)mime:csv
+| https://yandex.com/search/?text=title:(14998370223)mime:doc
+| https://yandex.com/search/?text=title:(14998370223)mime:docx
+| https://yandex.com/search/?text=title:(14998370223)mime:log
+| https://yandex.com/search/?text=title:(14998370223)mime:xls
+| https://yandex.com/search/?text=title:(14998370223)mime:xlsx
+| https://yandex.com/search/?text=title:(14998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:instagram.com+"14998370223"
+| https://yandex.com/search/?text=site:twitter.com+"14998370223"
+| https://yandex.com/search/?text=site:facebook.com+"14998370223"
+| https://yandex.com/search/?text=site:vk.com+"14998370223"
+| https://yandex.com/search/?text=site:linkedin.com+"14998370223"
+----------------------------------------------------------------------------------------------------------------------
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%2255+14+99837-0223%22
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:txt
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:csv
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:pdf
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:doc
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:docx
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:log
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:xls
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:txt
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:csv
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:pdf
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:doc
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:docx
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:log
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:xls
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=site:www.instagram.com+intext:%22%2255 14 99837-0223%22%22
+| https://www.google.com/search?q=site:www.twitter.com+intext:%22%2255 14 99837-0223%22%22
+| https://www.google.com/search?q=site:www.facebook.com+intext:%22%2255 14 99837-0223%22%22
+| https://www.google.com/search?q=site:www.vk.com+intext:%22%2255 14 99837-0223%22%22
+| https://www.google.com/search?q=site:www.linkedin.com+intext:%22%2255 14 99837-0223%22%22
+----------------------------------------------------------------------------------------------------------------------
+YANDEX-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=55+14+99837-0223
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:txt
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:pdf
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:csv
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:doc
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:log
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:docx
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:xls
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:xlsx
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:55+14+99837-0223
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:txt
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:pdf
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:csv
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:doc
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:docx
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:log
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:xls
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:xlsx
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:instagram.com+"55 14 99837-0223"
+| https://yandex.com/search/?text=site:twitter.com+"55 14 99837-0223"
+| https://yandex.com/search/?text=site:facebook.com+"55 14 99837-0223"
+| https://yandex.com/search/?text=site:vk.com+"55 14 99837-0223"
+| https://yandex.com/search/?text=site:linkedin.com+"55 14 99837-0223"
+----------------------------------------------------------------------------------------------------------------------
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%225514998370223%22
+| https://www.google.com/search?q=intext:(%225514998370223%22)
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:txt
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:csv
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:pdf
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:doc
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:docx
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:log
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:xls
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:(%225514998370223%22)
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:txt
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:csv
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:pdf
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:doc
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:docx
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:log
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:xls
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%225514998370223%22
+| https://www.google.com/search?q=intext:(%225514998370223%22)
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:txt
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:csv
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:pdf
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:doc
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:docx
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:log
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:xls
+| https://www.google.com/search?q=intext:(%225514998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:(%225514998370223%22)
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:txt
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:csv
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:pdf
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:doc
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:docx
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:log
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:xls
+| https://www.google.com/search?q=intitle:(%225514998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=site:www.instagram.com+intext:%22%225514998370223%22%22
+| https://www.google.com/search?q=site:www.twitter.com+intext:%22%225514998370223%22%22
+| https://www.google.com/search?q=site:www.facebook.com+intext:%22%225514998370223%22%22
+| https://www.google.com/search?q=site:www.vk.com+intext:%22%225514998370223%22%22
+| https://www.google.com/search?q=site:www.linkedin.com+intext:%22%225514998370223%22%22
+----------------------------------------------------------------------------------------------------------------------
+YANDEX-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=5514998370223
+| https://yandex.com/search/?text=(5514998370223)mime:txt
+| https://yandex.com/search/?text=(5514998370223)mime:pdf
+| https://yandex.com/search/?text=(5514998370223)mime:csv
+| https://yandex.com/search/?text=(5514998370223)mime:doc
+| https://yandex.com/search/?text=(5514998370223)mime:log
+| https://yandex.com/search/?text=(5514998370223)mime:docx
+| https://yandex.com/search/?text=(5514998370223)mime:xls
+| https://yandex.com/search/?text=(5514998370223)mime:xlsx
+| https://yandex.com/search/?text=(5514998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:5514998370223
+| https://yandex.com/search/?text=title:(5514998370223)mime:txt
+| https://yandex.com/search/?text=title:(5514998370223)mime:pdf
+| https://yandex.com/search/?text=title:(5514998370223)mime:csv
+| https://yandex.com/search/?text=title:(5514998370223)mime:doc
+| https://yandex.com/search/?text=title:(5514998370223)mime:docx
+| https://yandex.com/search/?text=title:(5514998370223)mime:log
+| https://yandex.com/search/?text=title:(5514998370223)mime:xls
+| https://yandex.com/search/?text=title:(5514998370223)mime:xlsx
+| https://yandex.com/search/?text=title:(5514998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:instagram.com+"5514998370223"
+| https://yandex.com/search/?text=site:twitter.com+"5514998370223"
+| https://yandex.com/search/?text=site:facebook.com+"5514998370223"
+| https://yandex.com/search/?text=site:vk.com+"5514998370223"
+| https://yandex.com/search/?text=site:linkedin.com+"5514998370223"
+----------------------------------------------------------------------------------------------------------------------
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%22(14)+998370223%22
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:txt
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:csv
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:pdf
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:doc
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:docx
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:log
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:xls
+| https://www.google.com/search?q=intext:(%22(14)+998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:txt
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:csv
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:pdf
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:doc
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:docx
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:log
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:xls
+| https://www.google.com/search?q=intitle:(%22(14)+998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=site:www.instagram.com+intext:%22%22(14) 998370223%22%22
+| https://www.google.com/search?q=site:www.twitter.com+intext:%22%22(14) 998370223%22%22
+| https://www.google.com/search?q=site:www.facebook.com+intext:%22%22(14) 998370223%22%22
+| https://www.google.com/search?q=site:www.vk.com+intext:%22%22(14) 998370223%22%22
+| https://www.google.com/search?q=site:www.linkedin.com+intext:%22%22(14) 998370223%22%22
+----------------------------------------------------------------------------------------------------------------------
+YANDEX-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=(14)+998370223
+| https://yandex.com/search/?text=((14)+998370223)mime:txt
+| https://yandex.com/search/?text=((14)+998370223)mime:pdf
+| https://yandex.com/search/?text=((14)+998370223)mime:csv
+| https://yandex.com/search/?text=((14)+998370223)mime:doc
+| https://yandex.com/search/?text=((14)+998370223)mime:log
+| https://yandex.com/search/?text=((14)+998370223)mime:docx
+| https://yandex.com/search/?text=((14)+998370223)mime:xls
+| https://yandex.com/search/?text=((14)+998370223)mime:xlsx
+| https://yandex.com/search/?text=((14)+998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:(14)+998370223
+| https://yandex.com/search/?text=title:((14)+998370223)mime:txt
+| https://yandex.com/search/?text=title:((14)+998370223)mime:pdf
+| https://yandex.com/search/?text=title:((14)+998370223)mime:csv
+| https://yandex.com/search/?text=title:((14)+998370223)mime:doc
+| https://yandex.com/search/?text=title:((14)+998370223)mime:docx
+| https://yandex.com/search/?text=title:((14)+998370223)mime:log
+| https://yandex.com/search/?text=title:((14)+998370223)mime:xls
+| https://yandex.com/search/?text=title:((14)+998370223)mime:xlsx
+| https://yandex.com/search/?text=title:((14)+998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:instagram.com+"(14) 998370223"
+| https://yandex.com/search/?text=site:twitter.com+"(14) 998370223"
+| https://yandex.com/search/?text=site:facebook.com+"(14) 998370223"
+| https://yandex.com/search/?text=site:vk.com+"(14) 998370223"
+| https://yandex.com/search/?text=site:linkedin.com+"(14) 998370223"
+----------------------------------------------------------------------------------------------------------------------
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%22014998370223%22
+| https://www.google.com/search?q=intext:(%22014998370223%22)
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:txt
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:csv
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:pdf
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:doc
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:docx
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:log
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:xls
+| https://www.google.com/search?q=intext:(%22014998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:(%22014998370223%22)
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:txt
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:csv
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:pdf
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:doc
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:docx
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:log
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:xls
+| https://www.google.com/search?q=intitle:(%22014998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=site:www.instagram.com+intext:%22%22014998370223%22%22
+| https://www.google.com/search?q=site:www.twitter.com+intext:%22%22014998370223%22%22
+| https://www.google.com/search?q=site:www.facebook.com+intext:%22%22014998370223%22%22
+| https://www.google.com/search?q=site:www.vk.com+intext:%22%22014998370223%22%22
+| https://www.google.com/search?q=site:www.linkedin.com+intext:%22%22014998370223%22%22
+----------------------------------------------------------------------------------------------------------------------
+YANDEX-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=014998370223
+| https://yandex.com/search/?text=(014998370223)mime:txt
+| https://yandex.com/search/?text=(014998370223)mime:pdf
+| https://yandex.com/search/?text=(014998370223)mime:csv
+| https://yandex.com/search/?text=(014998370223)mime:doc
+| https://yandex.com/search/?text=(014998370223)mime:log
+| https://yandex.com/search/?text=(014998370223)mime:docx
+| https://yandex.com/search/?text=(014998370223)mime:xls
+| https://yandex.com/search/?text=(014998370223)mime:xlsx
+| https://yandex.com/search/?text=(014998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:014998370223
+| https://yandex.com/search/?text=title:(014998370223)mime:txt
+| https://yandex.com/search/?text=title:(014998370223)mime:pdf
+| https://yandex.com/search/?text=title:(014998370223)mime:csv
+| https://yandex.com/search/?text=title:(014998370223)mime:doc
+| https://yandex.com/search/?text=title:(014998370223)mime:docx
+| https://yandex.com/search/?text=title:(014998370223)mime:log
+| https://yandex.com/search/?text=title:(014998370223)mime:xls
+| https://yandex.com/search/?text=title:(014998370223)mime:xlsx
+| https://yandex.com/search/?text=title:(014998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:instagram.com+"014998370223"
+| https://yandex.com/search/?text=site:twitter.com+"014998370223"
+| https://yandex.com/search/?text=site:facebook.com+"014998370223"
+| https://yandex.com/search/?text=site:vk.com+"014998370223"
+| https://yandex.com/search/?text=site:linkedin.com+"014998370223"
+----------------------------------------------------------------------------------------------------------------------
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%2214998370223%22
+| https://www.google.com/search?q=intext:(%2214998370223%22)
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:txt
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:csv
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:pdf
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:doc
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:docx
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:log
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:xls
+| https://www.google.com/search?q=intext:(%2214998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:(%2214998370223%22)
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:txt
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:csv
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:pdf
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:doc
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:docx
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:log
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:xls
+| https://www.google.com/search?q=intitle:(%2214998370223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=site:www.instagram.com+intext:%22%2214998370223%22%22
+| https://www.google.com/search?q=site:www.twitter.com+intext:%22%2214998370223%22%22
+| https://www.google.com/search?q=site:www.facebook.com+intext:%22%2214998370223%22%22
+| https://www.google.com/search?q=site:www.vk.com+intext:%22%2214998370223%22%22
+| https://www.google.com/search?q=site:www.linkedin.com+intext:%22%2214998370223%22%22
+----------------------------------------------------------------------------------------------------------------------
+YANDEX-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=14998370223
+| https://yandex.com/search/?text=(14998370223)mime:txt
+| https://yandex.com/search/?text=(14998370223)mime:pdf
+| https://yandex.com/search/?text=(14998370223)mime:csv
+| https://yandex.com/search/?text=(14998370223)mime:doc
+| https://yandex.com/search/?text=(14998370223)mime:log
+| https://yandex.com/search/?text=(14998370223)mime:docx
+| https://yandex.com/search/?text=(14998370223)mime:xls
+| https://yandex.com/search/?text=(14998370223)mime:xlsx
+| https://yandex.com/search/?text=(14998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:14998370223
+| https://yandex.com/search/?text=title:(14998370223)mime:txt
+| https://yandex.com/search/?text=title:(14998370223)mime:pdf
+| https://yandex.com/search/?text=title:(14998370223)mime:csv
+| https://yandex.com/search/?text=title:(14998370223)mime:doc
+| https://yandex.com/search/?text=title:(14998370223)mime:docx
+| https://yandex.com/search/?text=title:(14998370223)mime:log
+| https://yandex.com/search/?text=title:(14998370223)mime:xls
+| https://yandex.com/search/?text=title:(14998370223)mime:xlsx
+| https://yandex.com/search/?text=title:(14998370223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:instagram.com+"14998370223"
+| https://yandex.com/search/?text=site:twitter.com+"14998370223"
+| https://yandex.com/search/?text=site:facebook.com+"14998370223"
+| https://yandex.com/search/?text=site:vk.com+"14998370223"
+| https://yandex.com/search/?text=site:linkedin.com+"14998370223"
+----------------------------------------------------------------------------------------------------------------------
+GOOGLE-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%2255+14+99837-0223%22
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:txt
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:csv
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:pdf
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:doc
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:docx
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:log
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:xls
+| https://www.google.com/search?q=intext:(%2255+14+99837-0223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:txt
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:csv
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:pdf
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:doc
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:docx
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:log
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:xls
+| https://www.google.com/search?q=intitle:(%2255+14+99837-0223%22)filetype:xlsx
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=site:www.instagram.com+intext:%22%2255 14 99837-0223%22%22
+| https://www.google.com/search?q=site:www.twitter.com+intext:%22%2255 14 99837-0223%22%22
+| https://www.google.com/search?q=site:www.facebook.com+intext:%22%2255 14 99837-0223%22%22
+| https://www.google.com/search?q=site:www.vk.com+intext:%22%2255 14 99837-0223%22%22
+| https://www.google.com/search?q=site:www.linkedin.com+intext:%22%2255 14 99837-0223%22%22
+----------------------------------------------------------------------------------------------------------------------
+YANDEX-DORKS:
+
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=55+14+99837-0223
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:txt
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:pdf
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:csv
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:doc
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:log
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:docx
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:xls
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:xlsx
+| https://yandex.com/search/?text=(55+14+99837-0223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:55+14+99837-0223
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:txt
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:pdf
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:csv
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:doc
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:docx
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:log
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:xls
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:xlsx
+| https://yandex.com/search/?text=title:(55+14+99837-0223)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+
+POSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:
+[FINGER-PRINTS-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:instagram.com+"55 14 99837-0223"
+| https://yandex.com/search/?text=site:twitter.com+"55 14 99837-0223"
+| https://yandex.com/search/?text=site:facebook.com+"55 14 99837-0223"
+| https://yandex.com/search/?text=site:vk.com+"55 14 99837-0223"
+| https://yandex.com/search/?text=site:linkedin.com+"55 14 99837-0223"
+----------------------------------------------------------------------------------------------------------------------

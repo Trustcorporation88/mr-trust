@@ -1,0 +1,24 @@
+SCANNING EXECUTED ON:
+Date: 05/05/2026 11:06:01
+IP: 52.67.189.132
+NATION: Brazil
+NATION-CODE: BR
+REGION-CODE: SP
+REGION-NAME: São Paulo
+CITY: São Paulo
+TIMEZONE: America/Sao_Paulo
+ISP: Amazon Technologies Inc.
+ORG: AWS EC2 (sa-east-1)
+AS: AS16509 Amazon.com, Inc.
+LAT: -23.5505
+LONG: -46.6333
+ZIP/POSTAL-CODE: 01000-000
+
+MALICIOUS/FAKE LINK FOUND ON:
+GOOD LOOKS LIKE THIS WEBSITE/DOMAIN IS SAFE :-)
+FOR MAJOR INFORMATION CONSULT THESE LINKS...
+https://www.scamadviser.com/check-website/dicasmei.com.br
+https://www.ssltrust.com.au/ssl-tools/website-security-check?domain=dicasmei.com.br
+https://www.islegitsite.com/check/dicasmei.com.br
+
+SCANNING EXECUTED WITH Mr.Holmes
