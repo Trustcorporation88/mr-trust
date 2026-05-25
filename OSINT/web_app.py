@@ -1,4 +1,4 @@
-"""Mr.Holmes Web - Dashboard OSINT estilo streaming."""
+"""Mr Trust Web - Dashboard OSINT."""
 
 import json
 import os
@@ -11,7 +11,7 @@ import streamlit as st
 sys.path.insert(0, os.path.dirname(__file__))
 
 st.set_page_config(
-    page_title="Mr.Holmes - Dashboard OSINT",
+    page_title="Mr Trust - Dashboard OSINT",
     page_icon="M",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -677,83 +677,83 @@ CATALOG = [
     {
         "key": "home",
         "label": "Inicio",
-        "emoji": "M",
-        "eyebrow": "Featured Intelligence",
+        "emoji": "MT",
+        "eyebrow": "Painel Principal",
         "title": "Painel Central",
-        "description": "Entrada principal da suite. Acompanhe os serviços de coleta, abra módulos e navegue como um catálogo operacional.",
-        "chips": ["Hero", "Streaming UX", "OSINT"],
+        "description": "Entrada principal da suite. Acompanhe os servicos de coleta, abra modulos e navegue pelo fluxo operacional.",
+        "chips": ["Painel", "Fluxo", "OSINT"],
     },
     {
         "key": "phone",
         "label": "Telefone",
-        "emoji": "FONE",
-        "eyebrow": "Most Watched",
+        "emoji": "TEL",
+        "eyebrow": "Busca Prioritaria",
         "title": "Busca de Telefone",
-        "description": "Correlaciona formatos, DDD, geolocalização, fontes públicas e links multi-motor.",
-        "chips": ["Intel", "Telespot", "Risk Score"],
+        "description": "Correlaciona formatos, DDD, geolocalizacao, fontes publicas e links de busca.",
+        "chips": ["Inteligencia", "Geolocalizacao", "Risco"],
     },
     {
         "key": "email",
         "label": "Email",
-        "emoji": "MAIL",
-        "eyebrow": "Fresh Drop",
+        "emoji": "EML",
+        "eyebrow": "Identidade Digital",
         "title": "Busca de Email",
-        "description": "Validação, MX, Gravatar, domínio e vazamentos públicos em uma única visão.",
-        "chips": ["MX", "Leaks", "Validation"],
+        "description": "Validacao, MX, Gravatar, dominio e vazamentos publicos em uma unica visao.",
+        "chips": ["MX", "Vazamentos", "Validacao"],
     },
     {
         "key": "domain",
         "label": "Dominio",
-        "emoji": "WEB",
-        "eyebrow": "Trending Now",
+        "emoji": "DOM",
+        "eyebrow": "Infraestrutura",
         "title": "Busca de Domínio",
-        "description": "DNS, GeoIP, SSL, uptime, portas, subdomínios e ViewDNS em pipeline único.",
+        "description": "DNS, GeoIP, SSL, uptime, portas, subdominios e ViewDNS em um fluxo unico.",
         "chips": ["DNS", "SSL", "ViewDNS"],
     },
     {
         "key": "network",
         "label": "Rede",
-        "emoji": "NET",
-        "eyebrow": "Utility Collection",
+        "emoji": "RED",
+        "eyebrow": "Colecao Utilitaria",
         "title": "Ferramentas de Rede",
-        "description": "Ping, uptime, IP reverso, scan de portas e hosting lookup com execução rápida.",
-        "chips": ["Ping", "Ports", "Hosting"],
+        "description": "Ping, uptime, IP reverso, scan de portas e lookup de hosting com execucao rapida.",
+        "chips": ["Ping", "Portas", "Hosting"],
     },
     {
         "key": "graph",
         "label": "Grafo",
-        "emoji": "LINK",
-        "eyebrow": "Analyst Picks",
+        "emoji": "GRA",
+        "eyebrow": "Mapa Investigativo",
         "title": "Mapa de Relacionamentos",
-        "description": "Monte um grafo de entidades no estilo Maltego para conexões investigativas.",
-        "chips": ["Nodes", "Edges", "Maltego"],
+        "description": "Monte um grafo de entidades no estilo Maltego para conexoes investigativas.",
+        "chips": ["Nos", "Arestas", "Maltego"],
     },
     {
         "key": "tools",
         "label": "Ferramentas",
-        "emoji": "STACK",
-        "eyebrow": "External Apps",
+        "emoji": "FER",
+        "eyebrow": "Aplicacoes Externas",
         "title": "Hub de Ferramentas",
-        "description": "Abra serviços externos e componha seu fluxo de investigação.",
+        "description": "Abra servicos externos e componha seu fluxo de investigacao.",
         "chips": ["UrlScan", "ViewDNS", "PimEyes"],
     },
     {
         "key": "history",
         "label": "Historico",
-        "emoji": "LOG",
-        "eyebrow": "Continue Watching",
+        "emoji": "HIS",
+        "eyebrow": "Retomar Operacao",
         "title": "Histórico de Buscas",
-        "description": "Retome investigações recentes e acompanhe o volume operacional.",
-        "chips": ["Logs", "Recents", "Stats"],
+        "description": "Retome investigacoes recentes e acompanhe o volume operacional.",
+        "chips": ["Logs", "Recentes", "Metricas"],
     },
     {
         "key": "about",
         "label": "Sobre",
-        "emoji": "INFO",
-        "eyebrow": "Behind The Scenes",
+        "emoji": "SOB",
+        "eyebrow": "Documentacao",
         "title": "Sobre o Projeto",
-        "description": "Resumo técnico da stack, fontes e finalidade educacional.",
-        "chips": ["Docs", "Stack", "Legal"],
+        "description": "Resumo tecnico da stack, fontes e finalidade educacional.",
+        "chips": ["Docs", "Stack", "Aviso"],
     },
 ]
 
@@ -800,31 +800,31 @@ TOOLS = [
 
 SERVICE_PROFILES = {
     "phone": {
-        "eyebrow": "Live Trace",
-        "title": "Telefone Intelligence",
+        "eyebrow": "Rastreio Ativo",
+        "title": "Inteligencia de Telefone",
         "subtitle": "Correlacione numero, DDD, operadora, formatos publicos e score heuristico em um perfil visual dedicado.",
         "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1400&q=80",
         "accent": "#22c55e",
-        "tags": ["Caller Intel", "Geo Trace", "Risk Layer"],
-        "stats": [("Core", "PhoneIntel"), ("Foco", "Correlacao"), ("Sinal", "Publico")],
+        "tags": ["Inteligencia", "Geo Rastreio", "Camada de Risco"],
+        "stats": [("Motor", "PhoneIntel"), ("Foco", "Correlacao"), ("Sinal", "Publico")],
     },
     "email": {
-        "eyebrow": "Identity Thread",
-        "title": "Email Exposure Profile",
-        "subtitle": "Valide enderecos, enxergue MX, gravatar e sinais de exposicao em fontes abertas com banner proprio.",
+        "eyebrow": "Trilha de Identidade",
+        "title": "Perfil de Exposicao de Email",
+        "subtitle": "Valide enderecos, enxergue MX, gravatar e sinais de exposicao em fontes abertas com painel proprio.",
         "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
         "accent": "#60a5fa",
-        "tags": ["MX", "Leaks", "Avatar Check"],
-        "stats": [("Core", "EmailSearch"), ("Foco", "Exposure"), ("Camada", "Identity")],
+        "tags": ["MX", "Vazamentos", "Avatar"],
+        "stats": [("Motor", "EmailSearch"), ("Foco", "Exposicao"), ("Camada", "Identidade")],
     },
     "domain": {
-        "eyebrow": "Infrastructure Scan",
-        "title": "Domain Control Room",
-        "subtitle": "Reuna DNS, SSL, hosting, uptime, subdominios e surface area do alvo em uma tela de perfil de dominio.",
+        "eyebrow": "Varredura de Infra",
+        "title": "Centro de Dominio",
+        "subtitle": "Reuna DNS, SSL, hosting, uptime, subdominios e superficie do alvo em uma tela de perfil de dominio.",
         "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80",
         "accent": "#f59e0b",
-        "tags": ["DNS", "SSL", "Surface Map"],
-        "stats": [("Core", "DomainSearch"), ("Foco", "Infra"), ("Visao", "Full Stack")],
+        "tags": ["DNS", "SSL", "Mapa de Superficie"],
+        "stats": [("Motor", "DomainSearch"), ("Foco", "Infra"), ("Visao", "Completa")],
     },
 }
 
@@ -927,7 +927,7 @@ def render_related_tracks(current_key: str):
     related_keys = [key for key in ["phone", "email", "domain", "network"] if key != current_key][:3]
     related_items = [item for item in CATALOG if item["key"] in related_keys]
     if related_items:
-        card_shell("Continue investigando", "Troque de trilha sem voltar ao catalogo principal.")
+        card_shell("Continue investigando", "Troque de modulo sem voltar ao painel principal.")
         render_catalog_row(related_items, key_prefix=f"related_{current_key}")
 
 
@@ -1033,11 +1033,11 @@ def render_hero():
     st.markdown(
         f"""
         <section class="hero-shell">
-            <div class="hero-kicker">Mr.Holmes Original Series</div>
-            <h1 class="hero-title">O catalogo de investigacao agora roda como uma central de streaming.</h1>
+            <div class="hero-kicker">Mr Trust OSINT</div>
+            <h1 class="hero-title">Central OSINT unificada para investigacao digital.</h1>
             <p class="hero-subtitle">
-                Buscas de telefone, email, dominio, rede e grafo reunidas numa experiencia cinematografica,
-                com foco em descoberta rapida, impacto visual e operacao continua.
+                Buscas de telefone, email, dominio, rede e grafo reunidas em uma operacao unica,
+                com foco em descoberta rapida, clareza visual e continuidade investigativa.
             </p>
             <div class="hero-stats">{stats_html}</div>
         </section>
@@ -1049,7 +1049,7 @@ def render_hero():
 def render_top_nav():
     items = [item for item in CATALOG if item["key"] != "home"]
     pills = "".join(
-        f'<span class="top-nav-pill"><strong>{item["emoji"]}</strong> {item["label"]}</span>'
+        f'<span class="top-nav-pill">{item["label"]}</span>'
         for item in items[:7]
     )
     st.markdown(f'<div class="top-nav">{pills}</div>', unsafe_allow_html=True)
@@ -1197,15 +1197,15 @@ def render_home():
     render_continue_watching()
     render_service_profile_rail(
         ["phone", "email", "domain"],
-        "Perfis Originais",
-        "Cada servico principal agora tem identidade propria, banner dedicado e entrada rapida.",
+        "Perfis principais",
+        "Cada servico principal possui identidade propria, painel dedicado e entrada rapida.",
     )
-    card_shell("Categorias em destaque", "Escolha um modulo como se estivesse navegando num catalogo de operacoes.")
+    card_shell("Categorias em destaque", "Escolha um modulo para iniciar sua rotina investigativa.")
     render_catalog_row(CATALOG[1:4], key_prefix="featured")
     card_shell("Colecoes utilitarias", "Ferramentas de apoio, grafo de entidades e historico operacional.")
     render_catalog_row(CATALOG[4:8], key_prefix="utility")
 
-    card_shell("Ferramentas externas em cartaz", "Atalhos para complementar a investigacao fora da suite.")
+    card_shell("Ferramentas externas", "Atalhos para complementar a investigacao fora da suite.")
     cols = st.columns(3)
     for idx, tool in enumerate(TOOLS):
         cols[idx % 3].markdown(
@@ -1227,8 +1227,8 @@ def init_navigation():
 
 def sidebar_navigation():
     with st.sidebar:
-        st.markdown("## Mr.Holmes")
-        st.caption("Central de streaming para buscas OSINT")
+        st.markdown("## Mr Trust")
+        st.caption("Central OSINT para buscas e correlacao")
         options = {item["label"]: item["key"] for item in CATALOG}
         current_label = next(label for label, key in options.items() if key == st.session_state["page"])
         selected = st.radio("Navegacao", list(options.keys()), index=list(options.keys()).index(current_label))
@@ -1243,7 +1243,7 @@ def sidebar_navigation():
             st.session_state["page"] = options[quick]
             st.rerun()
         st.markdown("---")
-        st.caption("Playback rapido")
+        st.caption("Atalhos rapidos")
         st.markdown("- Telefone")
         st.markdown("- Email")
         st.markdown("- Dominio")
@@ -1255,7 +1255,7 @@ def render_phone():
     card_shell("Busca de Telefone", "Operadora, DDD, geolocalizacao, fontes publicas e score heuristico.")
     phone = st.text_input("Numero com codigo do pais", placeholder="5511999999999", key="phone_input")
 
-    if st.button("Iniciar episodio", use_container_width=True, type="primary", key="phone_search") and phone:
+    if st.button("Iniciar busca", use_container_width=True, type="primary", key="phone_search") and phone:
         with st.spinner("Analisando numero..."):
             try:
                 from Core.Support.Phone.Numbers import get_geo_from_ddd
@@ -1735,4 +1735,4 @@ inject_theme()
 init_navigation()
 sidebar_navigation()
 render_page()
-st.markdown('<div class="footer-note">Mr.Holmes OSINT · dashboard investigativo em estilo streaming.</div>', unsafe_allow_html=True)
+st.markdown('<div class="footer-note">Mr Trust OSINT · painel investigativo operacional.</div>', unsafe_allow_html=True)
