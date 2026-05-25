@@ -1182,7 +1182,7 @@ def render_intel_base(base: dict, title: str = "Camada OSINT Normalizada"):
             st.markdown(
                 f"""
                 <div class="list-card">
-                    <strong>{item.get("category", "artifact").upper()}</strong> · {item.get("label", "item")}<br>
+                    <strong>{item.get("category", "artifact").upper()}</strong> • {item.get("label", "item")}<br>
                     <span style="color:#b7b8c5;">{item.get("value", "N/A")}</span>
                 </div>
                 """,
