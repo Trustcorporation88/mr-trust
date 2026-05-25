@@ -223,12 +223,16 @@ THEME_CSS = """
     }
 
     .stream-card {
-        min-height: 228px;
+        min-height: 360px;
+        height: 360px;
         padding: 20px;
         transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
         position: relative;
         overflow: hidden;
         animation: card-enter 0.45s ease-out both;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .stream-card .stream-desc {
@@ -236,6 +240,7 @@ THEME_CSS = """
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        flex: 1;
     }
 
     .stream-card:hover {
@@ -266,28 +271,37 @@ THEME_CSS = """
     .stream-name {
         font-size: 24px;
         font-weight: 800;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
+        line-height: 1.18;
+        min-height: 58px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .stream-desc {
         color: var(--muted);
         line-height: 1.65;
-        min-height: 82px;
+        min-height: 102px;
         font-size: 14px;
     }
 
     .stream-meta {
-        margin-top: 16px;
-        display: flex;
+        margin-top: auto;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 8px;
-        flex-wrap: wrap;
+        min-height: 44px;
+        align-items: flex-end;
     }
 
     .chip {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         border-radius: 999px;
-        padding: 6px 10px;
+        padding: 6px 8px;
         font-size: 11px;
         font-weight: 700;
         letter-spacing: 0.08em;
@@ -295,6 +309,10 @@ THEME_CSS = """
         border: 1px solid rgba(255,255,255,0.1);
         background: rgba(255,255,255,0.06);
         color: #fff;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .chip-red { background: rgba(229, 9, 20, 0.16); border-color: rgba(229, 9, 20, 0.35); }
@@ -307,6 +325,21 @@ THEME_CSS = """
     .list-card {
         padding: 18px;
         animation: card-enter 0.45s ease-out both;
+    }
+
+    .tool-tile {
+        min-height: 190px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tool-tile .detail-sub {
+        margin-top: 4px;
+        flex: 1;
+    }
+
+    .tool-tile .tool-link-wrap {
+        margin-top: 14px;
     }
 
     .detail-title,
@@ -550,7 +583,8 @@ THEME_CSS = """
     .profile-rail-card {
         position: relative;
         overflow: hidden;
-        min-height: 280px;
+        min-height: 430px;
+        height: 430px;
         border-radius: 24px;
         background-size: cover;
         background-position: center;
@@ -561,7 +595,8 @@ THEME_CSS = """
     }
 
     .profile-rail-overlay {
-        min-height: 280px;
+        min-height: 430px;
+        height: 430px;
         padding: 24px;
         display: flex;
         flex-direction: column;
@@ -590,6 +625,12 @@ THEME_CSS = """
         font-size: 14px;
         line-height: 1.6;
         margin-bottom: 14px;
+        min-height: 88px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        flex: 1;
     }
 
     .footer-note {
@@ -662,6 +703,21 @@ THEME_CSS = """
         .stream-card,
         .profile-rail-card {
             min-height: 210px;
+            height: auto;
+        }
+
+        .profile-rail-overlay {
+            min-height: 210px;
+            height: auto;
+        }
+
+        .stream-name {
+            min-height: auto;
+        }
+
+        .stream-desc,
+        .profile-rail-subtitle {
+            min-height: auto;
         }
 
         .stream-name,
@@ -1213,7 +1269,7 @@ def render_home():
             <div class="tool-tile" style="border-color:{tool['accent']};">
                 <div class="tile-title">{tool['name']}</div>
                 <div class="detail-sub">{tool['desc']}</div>
-                <div style="margin-top:12px;"><a href="{tool['url']}" target="_blank" style="color:{tool['accent']};font-weight:700;">Abrir ferramenta</a></div>
+                <div class="tool-link-wrap"><a href="{tool['url']}" target="_blank" style="color:{tool['accent']};font-weight:700;">Abrir ferramenta</a></div>
             </div>
             """,
             unsafe_allow_html=True,
@@ -1650,7 +1706,7 @@ def render_tools():
             <div class="tool-tile" style="border-color:{tool['accent']};">
                 <div class="tile-title">{tool['name']}</div>
                 <div class="detail-sub">{tool['desc']}</div>
-                <div style="margin-top:12px;"><a href="{tool['url']}" target="_blank" style="color:{tool['accent']};font-weight:700;">Abrir ferramenta</a></div>
+                <div class="tool-link-wrap"><a href="{tool['url']}" target="_blank" style="color:{tool['accent']};font-weight:700;">Abrir ferramenta</a></div>
             </div>
             """,
             unsafe_allow_html=True,
