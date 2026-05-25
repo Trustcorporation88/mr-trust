@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+"""WhatsApp webhook receiver for MR TRUST CRM."""
+=======
 """WhatsApp webhook receiver for Mr.Holmes CRM."""
+>>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
 
 from __future__ import annotations
 
@@ -42,7 +46,11 @@ from crm_backend import (
 
 
 init_database()
+<<<<<<< HEAD
+app = FastAPI(title="MR TRUST CRM WhatsApp Webhook", version="1.0.0")
+=======
 app = FastAPI(title="Mr.Holmes CRM WhatsApp Webhook", version="1.0.0")
+>>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
 
 
 class UpdatePayload(BaseModel):

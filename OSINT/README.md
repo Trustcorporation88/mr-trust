@@ -3,13 +3,13 @@
 </p>
 
 <p align = "center">
-  <img src = "https://img.shields.io/github/stars/Lucksi/Mr.Holmes">
-  <img src = "https://img.shields.io/github/forks/Lucksi/Mr.Holmes">
-  <img src = "https://img.shields.io/badge/Maintained%3F-yes-green.svg">
-  <img src = "https://img.shields.io/github/license/Lucksi/Mr.Holmes">
-  <img src = "https://img.shields.io/github/repo-size/Lucksi/Mr.Holmes">
-  <img src= "https://img.shields.io/github/languages/count/Lucksi/Mr.Holmes">
-  <img src = "https://visitor-badge.laobi.icu/badge?page_id=Lucksi.Mr.Holmes">
+  <img src="https://img.shields.io/github/stars/Trustcorporation88/mr-trust">
+  <img src="https://img.shields.io/github/forks/Trustcorporation88/mr-trust">
+  <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg">
+  <img src="https://img.shields.io/github/license/Trustcorporation88/mr-trust">
+  <img src="https://img.shields.io/github/repo-size/Trustcorporation88/mr-trust">
+  <img src="https://img.shields.io/github/languages/count/Trustcorporation88/mr-trust">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=Trustcorporation88.mr-trust">
 </p>
 
 # :mag: Mr.Holmes 

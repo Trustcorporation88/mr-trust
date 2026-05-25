@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 """MR TRUST CRM - persisted CRM with auth, roles and channel intake."""
+=======
+"""Mr.Holmes CRM - persisted CRM with auth, roles and channel intake."""
+>>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
 
 from __future__ import annotations
 
@@ -59,7 +63,11 @@ BENCHMARKS = pd.DataFrame(
 
 
 st.set_page_config(
+<<<<<<< HEAD
     page_title="MR TRUST CRM",
+=======
+    page_title="Mr.Holmes CRM",
+>>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -143,6 +151,7 @@ st.markdown(
         margin: 2px 0 14px;
     }
 
+<<<<<<< HEAD
     .nav-toolbar {
         display: flex;
         gap: 10px;
@@ -165,6 +174,8 @@ st.markdown(
         letter-spacing: 0.08em;
     }
 
+=======
+>>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
     .top-nav-pill {
         display: inline-flex;
         align-items: center;
@@ -180,12 +191,15 @@ st.markdown(
         letter-spacing: 0.08em;
     }
 
+<<<<<<< HEAD
     .top-nav-pill .nav-icon {
         font-size: 13px;
         line-height: 1;
         opacity: 1;
     }
 
+=======
+>>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
     .hero {
         background: linear-gradient(120deg, rgba(5, 5, 8, 0.96), rgba(29, 5, 8, 0.92));
         border-radius: 24px;
@@ -346,6 +360,7 @@ st.markdown(
         border-radius: 12px !important;
     }
 
+<<<<<<< HEAD
     [data-testid="stTextInput"] input,
     [data-testid="stTextArea"] textarea,
     [data-testid="stNumberInput"] input,
@@ -398,6 +413,8 @@ st.markdown(
         opacity: 1 !important;
     }
 
+=======
+>>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
     .stTextInput input:focus,
     .stTextArea textarea:focus,
     .stNumberInput input:focus,
@@ -606,6 +623,7 @@ def ingest_message(uploaded_file) -> str:
 
 
 def render_navigation_strip(allowed_sections: list[str], active_section: str) -> None:
+<<<<<<< HEAD
     option_map = {
         f"{_section_icon(section)} {section}": section
         for section in allowed_sections
@@ -656,16 +674,22 @@ def _push_section_history(current_section: str) -> None:
 
 
 def _goto_home(allowed_sections: list[str]) -> None:
+    """
+    Navega para a seção inicial de forma mais segura
+    """
     current = st.session_state.get("crm_section", allowed_sections[0])
     target = "Visao Executiva" if "Visao Executiva" in allowed_sections else allowed_sections[0]
+    
     if current != target:
         _push_section_history(current)
         st.session_state["crm_section"] = target
-    st.session_state["crm_nav_radio"] = target
-    st.session_state["crm_top_nav"] = f"{_section_icon(target)} {target}"
+        st.session_state["crm_top_nav"] = f"{_section_icon(target)} {target}"
 
 
 def _go_back(allowed_sections: list[str]) -> bool:
+    """
+    Navega para a seção anterior de forma mais segura
+    """
     history = st.session_state.get("crm_section_history", [])
     current = st.session_state.get("crm_section", allowed_sections[0])
     while history:
@@ -673,7 +697,6 @@ def _go_back(allowed_sections: list[str]) -> bool:
         if target in allowed_sections and target != current:
             st.session_state["crm_section_history"] = history
             st.session_state["crm_section"] = target
-            st.session_state["crm_nav_radio"] = target
             st.session_state["crm_top_nav"] = f"{_section_icon(target)} {target}"
             return True
     st.session_state["crm_section_history"] = history
@@ -698,6 +721,13 @@ def render_nav_toolbar(allowed_sections: list[str]) -> None:
             f'<div class="nav-toolbar"><span class="nav-toolbar-pill">Seção atual: {current}</span></div>',
             unsafe_allow_html=True,
         )
+=======
+    chips = "".join(
+        f'<span class="top-nav-pill">{"●" if section == active_section else "○"} {section}</span>'
+        for section in allowed_sections
+    )
+    st.markdown(f'<div class="top-nav-strip">{chips}</div>', unsafe_allow_html=True)
+>>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
 
 
 def render_empty_state(message: str) -> None:
@@ -736,11 +766,16 @@ owner_options = sorted(
 )
 
 with st.sidebar:
+<<<<<<< HEAD
     st.markdown("## MR TRUST CRM")
+=======
+    st.markdown("## Mr.Holmes CRM")
+>>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
     st.caption("Atendimento, vendas e marketing em operacao persistida.")
     st.success(f"{user['full_name']} | perfil: {user['role']}")
     if st.button("Sair", use_container_width=True):
         st.session_state.pop("crm_user", None)
+<<<<<<< HEAD
         st.session_state.pop("crm_section", None)
         st.session_state.pop("crm_section_history", None)
         st.rerun()
@@ -765,17 +800,27 @@ with st.sidebar:
                 st.rerun()
             st.info("Sem navegacao anterior para voltar.")
 
+    # Remove a chave fixa para permitir mudanças dinâmicas
     selected_section = st.radio(
         "Navegacao",
         allowed_sections,
-        index=allowed_sections.index(st.session_state["crm_section"]),
-        key="crm_nav_radio",
+        index=allowed_sections.index(st.session_state["crm_section"])
     )
+    
+    # Lógica de navegação sem modificar o estado do widget
     if selected_section != st.session_state["crm_section"]:
         _push_section_history(st.session_state["crm_section"])
         st.session_state["crm_section"] = selected_section
         st.session_state["crm_top_nav"] = f"{_section_icon(selected_section)} {selected_section}"
+        st.experimental_rerun()
+    
     section = st.session_state["crm_section"]
+=======
+        st.rerun()
+
+    allowed_sections = get_role_sections(user["role"])
+    section = st.radio("Navegacao", allowed_sections)
+>>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
     selected_country = st.selectbox("Mercado", ["Todos", "Brasil", "Estados Unidos"])
     selected_owner = st.selectbox("Responsavel", ["Todos"] + owner_options)
     st.markdown("---")
@@ -825,7 +870,10 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+<<<<<<< HEAD
 render_nav_toolbar(allowed_sections)
+=======
+>>>>>>> b042ff2a30aa0a9955ac57ff2194f90d3b044eec
 render_navigation_strip(allowed_sections, section)
 
 render_metric_cards(
