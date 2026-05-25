@@ -1,4 +1,4 @@
-"""Mr Trust Web - Dashboard OSINT."""
+"""MR HOLMES Web - Dashboard OSINT."""
 
 import json
 import os
@@ -11,7 +11,7 @@ import streamlit as st
 sys.path.insert(0, os.path.dirname(__file__))
 
 st.set_page_config(
-    page_title="Mr Trust - Dashboard OSINT",
+    page_title="MR HOLMES - Dashboard OSINT",
     page_icon="M",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -1033,7 +1033,7 @@ def render_hero():
     st.markdown(
         f"""
         <section class="hero-shell">
-            <div class="hero-kicker">Mr Trust OSINT</div>
+            <div class="hero-kicker">MR HOLMES OSINT</div>
             <h1 class="hero-title">Central OSINT unificada para investigacao digital.</h1>
             <p class="hero-subtitle">
                 Buscas de telefone, email, dominio, rede e grafo reunidas em uma operacao unica,
@@ -1227,7 +1227,7 @@ def init_navigation():
 
 def sidebar_navigation():
     with st.sidebar:
-        st.markdown("## Mr Trust")
+        st.markdown("## MR HOLMES")
         st.caption("Central OSINT para buscas e correlacao")
         options = {item["label"]: item["key"] for item in CATALOG}
         current_label = next(label for label, key in options.items() if key == st.session_state["page"])
@@ -1735,4 +1735,4 @@ inject_theme()
 init_navigation()
 sidebar_navigation()
 render_page()
-st.markdown('<div class="footer-note">Mr Trust OSINT · painel investigativo operacional.</div>', unsafe_allow_html=True)
+st.markdown('<div class="footer-note">MR HOLMES OSINT · painel investigativo operacional.</div>', unsafe_allow_html=True)

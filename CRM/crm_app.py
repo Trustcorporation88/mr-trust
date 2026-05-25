@@ -1,4 +1,4 @@
-"""Mr.Holmes CRM - persisted CRM with auth, roles and channel intake."""
+"""MR HOLMES CRM - persisted CRM with auth, roles and channel intake."""
 
 from __future__ import annotations
 
@@ -59,7 +59,7 @@ BENCHMARKS = pd.DataFrame(
 
 
 st.set_page_config(
-    page_title="Mr.Holmes CRM",
+    page_title="MR HOLMES CRM",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -569,7 +569,7 @@ owner_options = sorted(
 )
 
 with st.sidebar:
-    st.markdown("## Mr.Holmes CRM")
+    st.markdown("## MR HOLMES CRM")
     st.caption("Atendimento, vendas e marketing em operacao persistida.")
     st.success(f"{user['full_name']} | perfil: {user['role']}")
     if st.button("Sair", use_container_width=True):
