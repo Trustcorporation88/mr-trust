@@ -7,8 +7,12 @@
   },
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "/api/:path*"
+      "source": "/api/services/:path*",
+      "destination": "/api/services"
+    },
+    {
+      "source": "/api/auth/:path*",
+      "destination": "/api/auth/:path*"
     },
     {
       "source": "/(.*)",
