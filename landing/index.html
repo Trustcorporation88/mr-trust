@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr.Holmes - CRM + Inteligência de Dados | Lead Enrichment Automático</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .hero .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #333;
+        }
+
+        .features {
+            background: #f8f9fa;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .comparison {
+            background: white;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .check {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .x {
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .unique {
+            background: #fff3cd;
+            font-weight: 600;
+        }
+
+        .use-cases {
+            background: #f8f9fa;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .use-case {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .use-case h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .use-case-benefits {
+            font-size: 14px;
+            color: #666;
+            list-style: none;
+        }
+
+        .use-case-benefits li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .use-case-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .roi {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .roi h2 {
+            color: white;
+        }
+
+        .roi-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .metric {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .pricing {
+            background: white;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border: 2px solid #eee;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            transform: translateY(-10px);
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .price span {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-features li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero .subtitle {
+                font-size: 18px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .comparison-table {
+                font-size: 12px;
+            }
+        }
+
+        .highlight {
+            background: #ffd700;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                🔍 Mr.Holmes
+            </div>
+            <nav>
+                <a href="#features">Recursos</a>
+                <a href="#comparison">Comparativo</a>
+                <a href="#use-cases">Casos de Uso</a>
+                <a href="#pricing">Preços</a>
+                <a href="#contact">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>O CRM que <span class="highlight">Investiga</span></h1>
+            <p class="subtitle">CRM + Inteligência de Dados Pública Integrada</p>
+            <p style="font-size: 18px; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Enriqueça leads automaticamente, valide clientes e tome decisões baseadas em dados com nossa plataforma única no mercado
+            </p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Começar Trial Grátis</button>
+                <button class="btn btn-secondary">Ver Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>O Que Torna Mr.Holmes Único</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔎</div>
+                    <h3>Lead Enrichment Automático</h3>
+                    <p>Quando um lead chega, Mr.Holmes automaticamente busca e preenche 20+ campos com dados públicos: email validado, telefone, perfil profissional, presença online e muito mais.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚠️</div>
+                    <h3>Risk Assessment</h3>
+                    <p>Valide clientes antes de liberar crédito, fazer parceria ou fornecimento. Score automático de confiabilidade baseado em múltiplas fontes de dados públicos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Due Diligence Acelerada</h3>
+                    <p>Gere relatórios completos de investigação em minutos, não em dias. Ideal para M&A, parcerias e compliance. Reduz tempo de análise de 2-3 dias para 5 minutos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Monitoramento Inteligente</h3>
+                    <p>Receba alertas quando seus leads/clientes têm mudanças importantes: novo cargo, muda de empresa, menção em notícias, ou oportunidades de re-venda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Automação de Workflows</h3>
+                    <p>Crie regras automáticas: quando X acontece → faça Y. Por exemplo: score alto → enviar proposta; mudança de empresa → criar novo lead.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Integração com Seu CRM</h3>
+                    <p>Não precisa trocar de CRM. Mr.Holmes integra com Salesforce, HubSpot, Pipedrive e qualquer sistema via API. Funciona onde você já trabalha.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison" id="comparison">
+        <div class="container">
+            <h2>Como Mr.Holmes se Compara ao Mercado</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Recurso</th>
+                        <th>Salesforce</th>
+                        <th>HubSpot</th>
+                        <th>Pipedrive</th>
+                        <th style="background: #667eea;">Mr.Holmes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CRM Base</strong></td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check" style="background: #fff3cd;">✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Automação</strong></td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check" style="background: #fff3cd;">✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reports</strong></td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check" style="background: #fff3cd;">✓</td>
+                    </tr>
+                    <tr class="unique">
+                        <td><strong>OSINT Integrado</strong></td>
+                        <td class="x">✗</td>
+                        <td class="x">✗</td>
+                        <td class="x">✗</td>
+                        <td class="check" style="background: #ffd700;">✓ ÚNICO</td>
+                    </tr>
+                    <tr class="unique">
+                        <td><strong>Lead Enrichment Auto</strong></td>
+                        <td class="x">✗</td>
+                        <td class="x">✗</td>
+                        <td class="x">✗</td>
+                        <td class="check" style="background: #ffd700;">✓ ÚNICO</td>
+                    </tr>
+                    <tr class="unique">
+                        <td><strong>Risk Assessment</strong></td>
+                        <td class="x">✗</td>
+                        <td class="x">✗</td>
+                        <td class="x">✗</td>
+                        <td class="check" style="background: #ffd700;">✓ ÚNICO</td>
+                    </tr>
+                    <tr class="unique">
+                        <td><strong>Inteligência de Dados</strong></td>
+                        <td class="x">✗</td>
+                        <td class="x">✗</td>
+                        <td class="x">✗</td>
+                        <td class="check" style="background: #ffd700;">✓ ÚNICO</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Preço Inicial</strong></td>
+                        <td>$$$$$</td>
+                        <td>$$$</td>
+                        <td>$$</td>
+                        <td style="background: #fff3cd; font-weight: 600;">$</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases" id="use-cases">
+        <div class="container">
+            <h2>Setores Ideais para Mr.Holmes</h2>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <h3>🏦 Crédito & Cobrança</h3>
+                    <p><strong>Desafio:</strong> Validar cliente antes de liberar crédito</p>
+                    <ul class="use-case-benefits">
+                        <li>Score automático de risco</li>
+                        <li>Valida identidade em segundos</li>
+                        <li>Reduz inadimplência</li>
+                    </ul>
+                </div>
+
+                <div class="use-case">
+                    <h3>🛡️ Compliance & AML</h3>
+                    <p><strong>Desafio:</strong> Know Your Customer (KYC) em escala</p>
+                    <ul class="use-case-benefits">
+                        <li>KYC automático de novos clientes</li>
+                        <li>Detecção de PEPs</li>
+                        <li>Auditoria completa</li>
+                    </ul>
+                </div>
+
+                <div class="use-case">
+                    <h3>💼 Vendas B2B Alto Valor</h3>
+                    <p><strong>Desafio:</strong> Due diligence antes de vender</p>
+                    <ul class="use-case-benefits">
+                        <li>Relatório completo do prospect</li>
+                        <li>Identifica tomadores de decisão</li>
+                        <li>Score de oportunidade</li>
+                    </ul>
+                </div>
+
+                <div class="use-case">
+                    <h3>🏠 Imobiliário</h3>
+                    <p><strong>Desafio:</strong> Validar compradores/vendedores</p>
+                    <ul class="use-case-benefits">
+                        <li>Verificação de antecedentes</li>
+                        <li>Validação de capacidade de pagamento</li>
+                        <li>Reduz fraudes</li>
+                    </ul>
+                </div>
+
+                <div class="use-case">
+                    <h3>🔐 Seguradoras</h3>
+                    <p><strong>Desafio:</strong> Verificar antecedentes de clientes</p>
+                    <ul class="use-case-benefits">
+                        <li>Background check automático</li>
+                        <li>Detecção de fraudes</li>
+                        <li>Underwriting acelerado</li>
+                    </ul>
+                </div>
+
+                <div class="use-case">
+                    <h3>🕵️ Investigações Privadas</h3>
+                    <p><strong>Desafio:</strong> Investigação baseada em dados públicos</p>
+                    <ul class="use-case-benefits">
+                        <li>Plataforma de investigação integrada</li>
+                        <li>Relatórios profissionais automáticos</li>
+                        <li>Gerador de leads investigativos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="roi">
+        <div class="container">
+            <h2>Seu ROI com Mr.Holmes</h2>
+            <div class="roi-metrics">
+                <div>
+                    <div class="metric">30-50 min</div>
+                    <div class="metric-label">Economizados por lead</div>
+                </div>
+                <div>
+                    <div class="metric">80%</div>
+                    <div class="metric-label">Menos fraudes detectadas</div>
+                </div>
+                <div>
+                    <div class="metric">2-3 dias →</div>
+                    <div class="metric-label">5 min em due diligence</div>
+                </div>
+                <div>
+                    <div class="metric">20+</div>
+                    <div class="metric-label">Campos preenchidos auto</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Preços Simples e Transparentes</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Startup</h3>
+                    <div class="price">R$ 99<span>/mês</span></div>
+                    <p>Ideal para equipes pequenas começando</p>
+                    <ul class="pricing-features">
+                        <li>100 buscas/mês</li>
+                        <li>5 workflows automáticos</li>
+                        <li>Suporte por email</li>
+                        <li>API básica</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%;">Comece Agora</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Profissional</h3>
+                    <div class="price">R$ 499<span>/mês</span></div>
+                    <p>✨ Mais popular para empresas em crescimento</p>
+                    <ul class="pricing-features">
+                        <li>1000 buscas/mês</li>
+                        <li>Workflows ilimitados</li>
+                        <li>Suporte prioritário</li>
+                        <li>API avançada</li>
+                        <li>Integrações CRM</li>
+                        <li>Monitoramento contínuo</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%;">Comece Agora</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <p>Para grandes organizações com necessidades específicas</p>
+                    <ul class="pricing-features">
+                        <li>Buscas ilimitadas</li>
+                        <li>SLA 99.9%</li>
+                        <li>Suporte 24/7</li>
+                        <li>Integrações customizadas</li>
+                        <li>Treinamento dedicado</li>
+                        <li>White label</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%;">Falar com Vendas</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Pronto para Transformar Seus Dados em Inteligência?</h2>
+            <p>Comece com um trial grátis. Sem cartão de crédito necessário.</p>
+            <button class="btn btn-secondary">Começar Trial de 14 Dias</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Mr.Holmes. CRM + Inteligência de Dados. Todos os direitos reservados.</p>
+            <p style="margin-top: 10px; font-size: 12px;">
+                <a href="#" style="color: #999; text-decoration: none;">Privacidade</a> | 
+                <a href="#" style="color: #999; text-decoration: none;">Termos</a> | 
+                <a href="#" style="color: #999; text-decoration: none;">LGPD</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+┌────────────────────────────────────────────────────────────────────────────┐
+│                  MEISHOP CRM - QUICK REFERENCE CARD                        │
+│                          26 de Maio de 2026                                │
+└────────────────────────────────────────────────────────────────────────────┘
+
+🚀 INICIAR SISTEMA (2 Terminais)
+
+Terminal 1 - Backend:
+  $ cd C:\Mr.Holmes\marketing\crm\server
+  $ npm run dev
+  ✅ http://localhost:3000
+
+Terminal 2 - Frontend:
+  $ cd C:\Mr.Holmes\marketing\crm\frontend
+  $ npm run dev
+  ✅ http://localhost:5173
+
+🔐 LOGIN DEMO
+
+  URL:      http://localhost:5173
+  Email:    admin@meishop.com
+  Password: admin123
+
+📊 TESTES RÁPIDOS
+
+  # Health check
+  curl http://localhost:3000/health
+
+  # Login (obter token)
+  curl -X POST http://localhost:3000/api/v1/auth/login \
+    -H "Content-Type: application/json" \
+    -d '{"email":"admin@meishop.com","password":"admin123"}'
+
+  # List campanhas (com token)
+  curl -H "Authorization: Bearer TOKEN" \
+    http://localhost:3000/api/v1/campaigns
+
+📁 SCRIPTS AUTOMAÇÃO
+
+  # Testar 11 endpoints
+  $ cd server && node test-all.js
+
+  # Health check sistema
+  $ cd server && node diagnostic.js
+
+  # Popular database novamente
+  $ cd server && node seed.js
+
+📚 DOCUMENTAÇÃO RÁPIDA
+
+  5 min   → QUICK_START.md
+  15 min  → EXECUTION_REPORT.md
+  Debug   → TROUBLESHOOTING.md
+  Índice  → BACKEND_DOCUMENTATION.md
+
+✅ FUNCIONA
+
+  ✓ Login/Autenticação
+  ✓ Campanhas (4 records)
+  ✓ Dashboard
+  ✓ JWT Token
+
+⚠️  PRECISA CORRIGIR
+
+  ✗ Deals (0 items - filtro)
+  ✗ Tickets (0 items - filtro)
+  ✗ /metrics (500 error)
+  ✗ /roi (500 error)
+
+📊 STATUS
+
+  Endpoints:  73% (8/11)
+  Auth:       ✅
+  Database:   ✅
+  Health:     ⚠️ (minors)
+
+🔧 TROUBLESHOOTING RÁPIDO
+
+  Backend não inicia?
+    → netstat -ano | findstr :3000
+    → taskkill /PID PID /F
+
+  Database offline?
+    → Get-Service PostgreSQL
+    → net start PostgreSQL
+
+  Algo não funciona?
+    → Ver TROUBLESHOOTING.md
+
+📞 PRÓXIMAS AÇÕES
+
+  [ ] Debug Deals/Tickets (P0)
+  [ ] Testar frontend (P1)
+  [ ] Fix /metrics endpoint (P1)
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ Imprima e coloque na parede! | Atualizado: 26/05/2026 | Status: 73%      │
+└────────────────────────────────────────────────────────────────────────────┘

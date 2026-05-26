@@ -223,12 +223,16 @@ THEME_CSS = """
     }
 
     .stream-card {
-        min-height: 228px;
+        min-height: 420px;
+        height: 420px;
         padding: 20px;
         transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
         position: relative;
         overflow: hidden;
         animation: card-enter 0.45s ease-out both;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     .stream-card .stream-desc {
@@ -277,7 +281,8 @@ THEME_CSS = """
     }
 
     .stream-meta {
-        margin-top: 16px;
+        margin-top: auto;
+        padding-top: 16px;
         display: flex;
         gap: 8px;
         flex-wrap: wrap;
@@ -388,10 +393,14 @@ THEME_CSS = """
     .stSelectbox div[data-baseweb="select"] > div,
     .stTextArea textarea {
         background: rgba(255,255,255,0.05) !important;
-        color: white !important;
+        color: #ffffff !important;
         border: 1px solid rgba(255,255,255,0.24) !important;
         border-radius: 14px !important;
         transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .stTextInput input::placeholder {
+        color: rgba(255,255,255,0.4) !important;
     }
 
     .stTextInput input:focus,
@@ -399,6 +408,13 @@ THEME_CSS = """
     .stTextArea textarea:focus {
         border-color: rgba(255, 59, 68, 0.72) !important;
         box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.22) !important;
+    }
+
+    /* Garantir que o texto digitado seja sempre branco */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        color: #ffffff !important;
     }
 
     .stButton > button {
@@ -634,6 +650,11 @@ THEME_CSS = """
         .ops-strip {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+
+        .stream-card {
+            min-height: 380px;
+            height: 380px;
+        }
     }
 
     @media (max-width: 640px) {
@@ -659,7 +680,11 @@ THEME_CSS = """
             grid-template-columns: repeat(1, minmax(0, 1fr));
         }
 
-        .stream-card,
+        .stream-card {
+            min-height: 260px;
+            height: auto;
+        }
+
         .profile-rail-card {
             min-height: 210px;
         }
@@ -685,7 +710,7 @@ CATALOG = [
     },
     {
         "key": "phone",
-        "label": "Telefone",
+        "label": "Fone",
         "emoji": "FONE",
         "eyebrow": "Most Watched",
         "title": "Busca de Telefone",
@@ -703,7 +728,7 @@ CATALOG = [
     },
     {
         "key": "domain",
-        "label": "Dominio",
+        "label": "Web",
         "emoji": "WEB",
         "eyebrow": "Trending Now",
         "title": "Busca de Domínio",
@@ -712,7 +737,7 @@ CATALOG = [
     },
     {
         "key": "network",
-        "label": "Rede",
+        "label": "Net",
         "emoji": "NET",
         "eyebrow": "Utility Collection",
         "title": "Ferramentas de Rede",
@@ -721,7 +746,7 @@ CATALOG = [
     },
     {
         "key": "graph",
-        "label": "Grafo",
+        "label": "Link",
         "emoji": "LINK",
         "eyebrow": "Analyst Picks",
         "title": "Mapa de Relacionamentos",
@@ -730,7 +755,7 @@ CATALOG = [
     },
     {
         "key": "tools",
-        "label": "Ferramentas",
+        "label": "Ferramenta",
         "emoji": "STACK",
         "eyebrow": "External Apps",
         "title": "Hub de Ferramentas",
@@ -739,7 +764,7 @@ CATALOG = [
     },
     {
         "key": "history",
-        "label": "Historico",
+        "label": "Log",
         "emoji": "LOG",
         "eyebrow": "Continue Watching",
         "title": "Histórico de Buscas",
@@ -1052,7 +1077,7 @@ def render_top_nav():
     for item in items[:7]:
         disabled = item["key"] == st.session_state.get("page", "home")
         pill_style = "opacity: 0.5;" if disabled else ""
-        pills += f'<span class="top-nav-pill" style="{pill_style}"><strong>{item["emoji"]}</strong> {item["label"]}</span>'
+        pills += f'<span class="top-nav-pill" style="{pill_style}"><strong>{item["label"]}</strong></span>'
     st.markdown(f'<div class="top-nav">{pills}</div>', unsafe_allow_html=True)
 
 
@@ -1282,10 +1307,6 @@ def main():
     render_related_tracks(st.session_state["page"])
 
 
-if __name__ == "__main__":
-    main()
-
-
 def init_navigation():
     if "page" not in st.session_state:
         st.session_state["page"] = "home"
@@ -1329,7 +1350,18 @@ def render_phone():
                 import phonenumbers as pn
                 from phonenumbers import carrier, geocoder, timezone
 
-                parsed = pn.parse("+" + phone.strip(), "BR")
+                # Adiciona '+' se não estiver presente para o phonenumbers
+                if not phone.strip().startswith('+'):
+                    phone_to_parse = "+" + phone.strip()
+                else:
+                    phone_to_parse = phone.strip()
+
+                parsed = pn.parse(phone_to_parse, "BR")
+                
+                if not pn.is_valid_number(parsed):
+                    st.error("Número de telefone inválido. Por favor, insira um número válido com código do país (ex: 5511999999999).")
+                    return
+
                 local = (
                     pn.format_number(parsed, pn.PhoneNumberFormat.E164)
                     .replace("+", "")
@@ -1378,9 +1410,8 @@ def render_phone():
                     c1, c2, c3 = st.columns(3)
                     c1.markdown(f"[Google]({item['google']})")
                     c2.markdown(f"[Bing]({item['bing']})")
-                    c3.markdown(f"[DuckDuckGo]({item['duckduckgo']})")
+                    c3.markdown(f"[DuckDuckGo]({item.get('duckduckgo', '#')})")
 
-                render_intel_base(intel.get("intel_base", {}))
                 st.success(f"Relatorio salvo em: {report_path}")
             except Exception as e:
                 st.error(f"Erro: {e}")
