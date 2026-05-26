@@ -1,0 +1,481 @@
+{
+  "services": [
+    {
+      "id": "create_deal",
+      "name": "Criar Novo Deal",
+      "category": "vendas",
+      "icon": "handshake",
+      "description": "Registre uma nova oportunidade de vendas no pipeline de vendas",
+      "color": "#3B82F6",
+      "instructions": {
+        "what": "Criar um novo Deal permite rastrear oportunidades de vendas através de diferentes estágios (Lead → Proposta → Negociação → Fechamento)",
+        "steps": [
+          "Clique em 'Novo Deal'",
+          "Preencha os dados do cliente",
+          "Defina o valor e probabilidade de fechamento",
+          "Escolha o estágio inicial do deal",
+          "Salve e visualize no Kanban"
+        ],
+        "requiredFields": [
+          {
+            "field": "Cliente",
+            "type": "select",
+            "description": "Selecione um cliente existente ou crie um novo"
+          },
+          {
+            "field": "Título",
+            "type": "text",
+            "description": "Nome/descrição da oportunidade (ex: Venda de 100 unidades)"
+          },
+          {
+            "field": "Valor",
+            "type": "currency",
+            "description": "Valor estimado do deal em BRL"
+          },
+          {
+            "field": "Probabilidade",
+            "type": "percentage",
+            "description": "Chance de fechamento (20% a 100%)"
+          },
+          {
+            "field": "Estágio",
+            "type": "select",
+            "options": ["lead", "proposal", "negotiation", "closing", "won"],
+            "description": "Estágio atual do deal"
+          }
+        ],
+        "expectedOutput": {
+          "success": "Deal criado com sucesso e aparece na Kanban Board",
+          "example": {
+            "id": "deal-123",
+            "title": "Venda de 100 unidades",
+            "customer": "Cliente A",
+            "amount": "R$ 50.000,00",
+            "probability": "70%",
+            "stage": "negotiation",
+            "createdAt": "26/05/2026"
+          }
+        }
+      }
+    },
+    {
+      "id": "manage_deal_stage",
+      "name": "Gerenciar Estágio do Deal",
+      "category": "vendas",
+      "icon": "arrows",
+      "description": "Mova um deal entre os estágios do pipeline",
+      "color": "#10B981",
+      "instructions": {
+        "what": "Alterar o estágio de um deal reflete o progresso da oportunidade e afeta o valor do pipeline",
+        "steps": [
+          "Acesse a Kanban Board",
+          "Localize o deal desejado",
+          "Arraste para a coluna do novo estágio",
+          "O deal é atualizado automaticamente",
+          "Sistema recalcula pipeline value"
+        ],
+        "requiredFields": [
+          {
+            "field": "Deal",
+            "type": "search",
+            "description": "Busque o deal pelo título ou cliente"
+          },
+          {
+            "field": "Novo Estágio",
+            "type": "select",
+            "options": ["lead", "proposal", "negotiation", "closing", "won"],
+            "description": "Para onde deseja mover o deal"
+          }
+        ],
+        "expectedOutput": {
+          "success": "Deal movido com sucesso na Kanban",
+          "metrics": "Pipeline value recalculado em tempo real"
+        }
+      }
+    },
+    {
+      "id": "mark_deal_won",
+      "name": "Marcar Deal como Ganho",
+      "category": "vendas",
+      "icon": "trophy",
+      "description": "Finalize um deal como venda bem-sucedida",
+      "color": "#F59E0B",
+      "instructions": {
+        "what": "Marcar um deal como 'Ganho' confirma a venda e move o valor para receita realizada",
+        "steps": [
+          "Localize o deal fechado",
+          "Clique em 'Marcar como Ganho'",
+          "Confirme a data de fechamento",
+          "Adicione notas finais (opcional)",
+          "Deal aparece em 'Vencidos com Sucesso'"
+        ],
+        "requiredFields": [
+          {
+            "field": "Deal ID",
+            "type": "hidden",
+            "description": "Identificador do deal"
+          },
+          {
+            "field": "Data de Fechamento",
+            "type": "date",
+            "description": "Quando a venda foi fechada"
+          }
+        ],
+        "expectedOutput": {
+          "success": "Deal movido para 'Ganho' com status finalizado",
+          "revenue": "Valor adicionado à receita realizada do período"
+        }
+      }
+    },
+    {
+      "id": "create_ticket",
+      "name": "Abrir Novo Ticket",
+      "category": "suporte",
+      "icon": "ticket",
+      "description": "Crie um ticket de suporte para rastrear problemas e solicitações",
+      "color": "#8B5CF6",
+      "instructions": {
+        "what": "Um ticket é um registro de uma solicitação ou problema que precisa ser resolvido, com SLA automático",
+        "steps": [
+          "Clique em 'Novo Ticket'",
+          "Selecione a categoria do problema",
+          "Defina a prioridade",
+          "Descreva o problema em detalhes",
+          "Atribua a um agente ou deixe na fila",
+          "Sistema calcula SLA automaticamente"
+        ],
+        "requiredFields": [
+          {
+            "field": "Cliente",
+            "type": "select",
+            "description": "Quem está relatando o problema"
+          },
+          {
+            "field": "Título",
+            "type": "text",
+            "description": "Resumo do problema (máx 100 caracteres)"
+          },
+          {
+            "field": "Descrição",
+            "type": "textarea",
+            "description": "Detalhes completos do problema"
+          },
+          {
+            "field": "Categoria",
+            "type": "select",
+            "options": ["bug", "feature", "billing", "account", "other"],
+            "description": "Tipo de problema"
+          },
+          {
+            "field": "Prioridade",
+            "type": "select",
+            "options": ["low", "medium", "high"],
+            "description": "Urgência - afeta SLA (high = 4h, medium = 24h, low = 72h)"
+          }
+        ],
+        "expectedOutput": {
+          "success": "Ticket criado com número único",
+          "example": {
+            "ticketId": "TKT-12345",
+            "status": "open",
+            "priority": "high",
+            "slaHours": 4,
+            "slaDeadline": "26/05/2026 18:00"
+          }
+        }
+      }
+    },
+    {
+      "id": "resolve_ticket",
+      "name": "Resolver Ticket",
+      "category": "suporte",
+      "icon": "check-circle",
+      "description": "Marque um ticket como resolvido e solicite CSAT",
+      "color": "#06B6D4",
+      "instructions": {
+        "what": "Fechar um ticket marca o problema como resolvido e permite coletar feedback de satisfação do cliente",
+        "steps": [
+          "Localize o ticket aberto",
+          "Clique em 'Resolver'",
+          "Adicione a solução implementada",
+          "Revise se resolveu o problema",
+          "Cliente recebe link de CSAT survey",
+          "Ticket movido para 'Resolvido'"
+        ],
+        "requiredFields": [
+          {
+            "field": "Ticket ID",
+            "type": "hidden",
+            "description": "Identificador do ticket"
+          },
+          {
+            "field": "Solução",
+            "type": "textarea",
+            "description": "Explicação da solução implementada"
+          },
+          {
+            "field": "Tempo Gasto",
+            "type": "time",
+            "description": "Tempo em horas para resolver"
+          }
+        ],
+        "expectedOutput": {
+          "success": "Ticket marcado como resolvido",
+          "followUp": "Cliente recebe email com link de feedback CSAT",
+          "metrics": "Tempo de resolução registrado"
+        }
+      }
+    },
+    {
+      "id": "create_campaign",
+      "name": "Criar Nova Campanha",
+      "category": "marketing",
+      "icon": "megaphone",
+      "description": "Lance uma nova campanha de marketing com orçamento e métricas",
+      "color": "#EC4899",
+      "instructions": {
+        "what": "Campanhas rastreiam esforços de marketing com budget, leads gerados e ROI calculado automaticamente",
+        "steps": [
+          "Clique em 'Nova Campanha'",
+          "Defina nome, tipo e canal",
+          "Configure datas de início e fim",
+          "Defina orçamento em BRL",
+          "Salve e comece a rastrear métricas"
+        ],
+        "requiredFields": [
+          {
+            "field": "Nome",
+            "type": "text",
+            "description": "Nome da campanha (ex: 'Email Marketing - Maio')"
+          },
+          {
+            "field": "Tipo",
+            "type": "select",
+            "options": ["email", "social", "paid_search", "webinar", "direct", "event"],
+            "description": "Tipo de campanha"
+          },
+          {
+            "field": "Canal",
+            "type": "select",
+            "options": ["email", "facebook", "instagram", "linkedin", "google_ads", "tiktok"],
+            "description": "Canal de distribuição"
+          },
+          {
+            "field": "Data Início",
+            "type": "date",
+            "description": "Quando a campanha vai ao ar"
+          },
+          {
+            "field": "Data Fim",
+            "type": "date",
+            "description": "Quando termina"
+          },
+          {
+            "field": "Orçamento",
+            "type": "currency",
+            "description": "Valor em BRL destinado à campanha"
+          }
+        ],
+        "expectedOutput": {
+          "success": "Campanha criada e monitorada",
+          "example": {
+            "campaignId": "camp-2026-05-email",
+            "name": "Email Marketing - Maio",
+            "budget": "R$ 5.000,00",
+            "startDate": "01/05/2026",
+            "endDate": "31/05/2026",
+            "leadsGenerated": 0,
+            "roi": "Calculado ao final"
+          }
+        }
+      }
+    },
+    {
+      "id": "track_campaign_metrics",
+      "name": "Rastrear Métricas de Campanha",
+      "category": "marketing",
+      "icon": "chart-bar",
+      "description": "Visualize performance, ROI e leads gerados por campanha",
+      "color": "#14B8A6",
+      "instructions": {
+        "what": "Dashboard de métricas mostra em tempo real: leads gerados, taxa de conversão, gastos vs orçamento e ROI",
+        "steps": [
+          "Acesse 'Campanhas'",
+          "Selecione a campanha desejada",
+          "Veja gráficos de performance",
+          "Compare com outras campanhas",
+          "Exporte relatório em PDF"
+        ],
+        "metrics": [
+          {
+            "name": "Leads Gerados",
+            "description": "Contato totais capturados"
+          },
+          {
+            "name": "Taxa de Conversão",
+            "description": "Percentual de leads convertidos em clientes"
+          },
+          {
+            "name": "Custo por Lead",
+            "description": "Orçamento dividido por leads"
+          },
+          {
+            "name": "ROI",
+            "description": "Retorno sobre investimento em %"
+          }
+        ],
+        "expectedOutput": {
+          "success": "Dashboard interativo com gráficos",
+          "export": "PDF com relatório completo da campanha"
+        }
+      }
+    },
+    {
+      "id": "import_customers",
+      "name": "Importar Clientes",
+      "category": "dados",
+      "icon": "upload",
+      "description": "Importe lista de clientes de arquivo CSV/Excel",
+      "color": "#6366F1",
+      "instructions": {
+        "what": "Importação em massa de clientes economiza tempo e sincroniza dados de outras plataformas",
+        "steps": [
+          "Clique em 'Importar Clientes'",
+          "Baixe o template CSV",
+          "Preencha seus dados no template",
+          "Faça upload do arquivo",
+          "Sistema valida e importa dados",
+          "Relatório de sucesso/erros"
+        ],
+        "fileFormat": {
+          "type": "CSV",
+          "columns": [
+            "nome",
+            "email",
+            "telefone",
+            "empresa",
+            "cargo",
+            "cidade",
+            "estado"
+          ],
+          "encoding": "UTF-8",
+          "maxRows": 10000
+        },
+        "expectedOutput": {
+          "success": "Clientes importados com sucesso",
+          "example": "10.000 clientes importados - 0 erros",
+          "validation": "Sistema valida emails e telefones"
+        }
+      }
+    },
+    {
+      "id": "export_report",
+      "name": "Exportar Relatório",
+      "category": "dados",
+      "icon": "download",
+      "description": "Exporte dados de deals, tickets ou campanhas em PDF/Excel",
+      "color": "#F97316",
+      "instructions": {
+        "what": "Geração de relatórios permitindo compartilhar dados com stakeholders em formatos padrão",
+        "steps": [
+          "Selecione o tipo de relatório",
+          "Defina período (data inicial e final)",
+          "Escolha formato (PDF ou Excel)",
+          "Clique em 'Gerar'",
+          "Download automático inicia"
+        ],
+        "reportTypes": [
+          {
+            "type": "Pipeline de Vendas",
+            "includes": "Deals por estágio, valor total, probabilidade"
+          },
+          {
+            "type": "Tickets SLA",
+            "includes": "Tickets abertos, tempo resolução, CSAT médio"
+          },
+          {
+            "type": "Performance de Campanhas",
+            "includes": "ROI, leads, conversões, comparativo"
+          }
+        ],
+        "expectedOutput": {
+          "success": "Arquivo gerado e baixado",
+          "formats": ["PDF com formatação profissional", "Excel com gráficos editáveis"]
+        }
+      }
+    },
+    {
+      "id": "setup_automation",
+      "name": "Configurar Automações",
+      "category": "configuração",
+      "icon": "cog",
+      "description": "Configure workflows automáticos (ex: email ao criar ticket)",
+      "color": "#78716C",
+      "instructions": {
+        "what": "Automações reduzem trabalho manual: enviar notificações, atualizar campos, gerar documentos automaticamente",
+        "steps": [
+          "Acesse 'Configurações > Automações'",
+          "Clique em 'Nova Automação'",
+          "Defina o gatilho (trigger)",
+          "Configure a ação",
+          "Teste a automação",
+          "Ative em produção"
+        ],
+        "triggers": [
+          "Novo deal criado",
+          "Deal movido para estágio X",
+          "Novo ticket aberto",
+          "Ticket com alta prioridade",
+          "Campanha iniciada"
+        ],
+        "actions": [
+          "Enviar email",
+          "Notificar no Slack",
+          "Atualizar campo",
+          "Criar tarefa",
+          "Integrar com webhook"
+        ],
+        "expectedOutput": {
+          "success": "Automação ativa e funcionando",
+          "logs": "Histórico de execuções disponível"
+        }
+      }
+    },
+    {
+      "id": "integrate_mailchimp",
+      "name": "Integração Mailchimp",
+      "category": "integrações",
+      "icon": "link",
+      "description": "Sincronize leads com Mailchimp para envio de emails em massa",
+      "color": "#001E50",
+      "instructions": {
+        "what": "Conecte o CRM com Mailchimp para sincronizar contatos e automatizar envio de campanhas de email",
+        "steps": [
+          "Vá em 'Integrações > Mailchimp'",
+          "Clique em 'Conectar'",
+          "Autorize o acesso com sua conta Mailchimp",
+          "Selecione a lista de contatos",
+          "Configure campos de sincronização",
+          "Ative sincronização automática"
+        ],
+        "requiredData": [
+          {
+            "field": "API Key",
+            "source": "https://mailchimp.com/account/api/",
+            "description": "Gere uma nova chave na sua conta Mailchimp"
+          },
+          {
+            "field": "List ID",
+            "source": "Painel Mailchimp > Audience",
+            "description": "ID da lista para sincronizar contatos"
+          }
+        ],
+        "expectedOutput": {
+          "success": "Integração conectada",
+          "sync": "Leads sincronizados automaticamente com Mailchimp",
+          "frequency": "Sincronização em tempo real"
+        }
+      }
+    }
+  ]
+}
