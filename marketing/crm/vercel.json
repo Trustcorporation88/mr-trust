@@ -1,9 +1,15 @@
 {
   "version": 2,
+  "buildCommand": "cd frontend && npm ci && npm run build",
   "outputDirectory": "frontend/dist",
   "env": {
     "NODE_ENV": "production",
     "VITE_API_URL": "https://crm-flax-nu-61.vercel.app/api"
+  },
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
   },
   "rewrites": [
     {
