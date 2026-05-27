@@ -1,6 +1,6 @@
-import pkg from 'pg';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+const pkg = require('pg');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const { Pool } = pkg;
 
@@ -14,7 +14,7 @@ const pool = new Pool({
   ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
 });
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return res.status(200).json({});
@@ -68,3 +68,5 @@ export default async function handler(req, res) {
     });
   }
 }
+
+module.exports = handler;
