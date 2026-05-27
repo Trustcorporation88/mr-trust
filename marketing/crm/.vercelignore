@@ -3,5 +3,10 @@ node_modules
 .env
 *.log
 .DS_Store
-marketing/crm/server/node_modules
-marketing/crm/server/.env
+frontend
+frontend/dist
+dist
+*.local
+.vercel
+.next
+out
