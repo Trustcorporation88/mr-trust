@@ -1,5 +1,5 @@
-#!/bin/bash
-set -ex
+#!/bin/sh
+set -x
 
 echo "==== Current directory ===="
 pwd
@@ -10,14 +10,8 @@ npm ci
 echo "==== Changing to frontend dir ===="
 cd frontend
 
-echo "==== Checking package.json ===="
-cat package.json | head -20
-
 echo "==== Installing dependencies in frontend ===="
 npm ci
-
-echo "==== Checking vite binary ===="
-ls -la node_modules/.bin/vite
 
 echo "==== Building frontend ===="
 npm run build
