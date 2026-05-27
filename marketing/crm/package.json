@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "npm install && cd frontend && npm install && npm run build"
+    "build": "npm install && cd frontend && npm install && npm run build && cd .. && cp -r frontend/dist dist"
   },
   "engines": {
     "node": "24.x"
