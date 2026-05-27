@@ -1,7 +1,11 @@
 {
   "version": 2,
-  "outputDirectory": "frontend/dist",
-  "public": "frontend/dist",
+  "projects": [
+    {
+      "name": "crm",
+      "rootDirectory": "frontend"
+    }
+  ],
   "env": {
     "NODE_ENV": "production",
     "VITE_API_URL": "https://crm-flax-nu-61.vercel.app/api"
