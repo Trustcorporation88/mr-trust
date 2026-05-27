@@ -5,7 +5,6 @@
       "runtime": "nodejs24.x"
     }
   },
-  "buildCommand": "npm install && cd frontend && npm install && npm run build && cd ..",
   "trailingSlash": false,
   "routes": [
     {
@@ -13,9 +12,16 @@
       "dest": "/api/$1"
     },
     {
+      "src": "/assets/(.*)",
+      "dest": "/frontend/dist/assets/$1"
+    },
+    {
+      "src": "/(.*\\.(js|css|svg|png|jpg|jpeg|gif|webp)$)",
+      "dest": "/frontend/dist/$1"
+    },
+    {
       "src": "/(?!api)(.*)",
       "dest": "/frontend/dist/index.html"
     }
-  ],
-  "outputDirectory": "frontend/dist"
+  ]
 }
