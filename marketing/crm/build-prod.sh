@@ -1,19 +1,18 @@
 #!/bin/sh
 set -x
 
-echo "==== Current directory ===="
-pwd
-
-echo "==== Installing dependencies in root ===="
+echo "Installing root dependencies..."
 npm ci
 
-echo "==== Changing to frontend dir ===="
 cd frontend
 
-echo "==== Installing dependencies in frontend ===="
+echo "Installing frontend dependencies..."
 npm ci
 
-echo "==== Building frontend ===="
+echo "Building frontend..."
 npm run build
 
-echo "==== Build complete ===="
+echo "Checking build output..."
+ls -la dist/ 2>/dev/null || echo "ERROR: dist directory not created"
+
+echo "Build complete!"
