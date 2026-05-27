@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "npm --prefix=./frontend ci && npm --prefix=./frontend run build"
+    "build": "npm --prefix frontend ci && npm --prefix frontend run build",
+    "test": "echo 'No tests specified'"
   },
   "engines": {
     "node": "24.x"
