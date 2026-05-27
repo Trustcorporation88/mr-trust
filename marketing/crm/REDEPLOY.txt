@@ -1,0 +1,2 @@
+Force redeploy - Remove frontend from default serving
+Timestamp: 2026-05-27T15:22:00Z
