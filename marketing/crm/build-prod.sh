@@ -8,6 +8,6 @@ echo "Installing dependencies in frontend..."
 npm --prefix frontend ci
 
 echo "Building frontend..."
-npm --prefix frontend run build
+npx --prefix frontend vite build
 
 echo "Build complete!"
