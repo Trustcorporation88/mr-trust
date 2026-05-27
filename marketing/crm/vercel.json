@@ -6,8 +6,7 @@
     "VITE_API_URL": "https://crm-flax-nu-61.vercel.app/api"
   },
   "rewrites": [
-    {"source": "/api/auth/:path*", "destination": "/api/auth/:path*"},
-    {"source": "/api/services/:path*", "destination": "/api/services"},
+    {"source": "/api/:path*", "destination": "/api/:path*"},
     {"source": "/(.*)", "destination": "/index.html"}
   ]
 }
