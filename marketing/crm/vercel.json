@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "outputDirectory": "dist",
   "env": {
     "NODE_ENV": "production",
     "VITE_API_URL": "https://crm-flax-nu-61.vercel.app/api"
@@ -8,5 +9,11 @@
     "api/**/*.js": {
       "runtime": "nodejs24.x"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "^/(?!api(/|$))",
+      "destination": "/index.html"
+    }
+  ]
 }
