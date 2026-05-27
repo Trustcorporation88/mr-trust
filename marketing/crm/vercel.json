@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "bash build.sh",
   "outputDirectory": "frontend/dist",
   "env": {
     "NODE_ENV": "production",
