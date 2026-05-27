@@ -7,12 +7,7 @@
   },
   "functions": {
     "api/**/*.js": {
-      "runtime": "nodejs24.x",
-      "memory": 1024,
-      "maxDuration": 30
+      "runtime": "nodejs24.x"
     }
-  },
-  "rewrites": [
-    {"source": "/(?!api).*", "destination": "/index.html"}
-  ]
+  }
 }
