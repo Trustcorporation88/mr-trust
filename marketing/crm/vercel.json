@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "sh ./build-prod.sh",
-  "outputDirectory": "frontend/dist",
+  "outputDirectory": "dist",
   "env": {
     "NODE_ENV": "production",
     "VITE_API_URL": "https://crm-flax-nu-61.vercel.app/api"
