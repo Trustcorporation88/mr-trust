@@ -1,6 +1,7 @@
 {
   "version": 2,
   "trailingSlash": false,
+  "buildCommand": "echo 'No build needed - API only deployment'",
   "routes": [
     {
       "src": "/api/(.*)",
