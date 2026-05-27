@@ -37,17 +37,30 @@ async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json');
 
   try {
+    console.log('[LOGIN] Starting login process...');
+    console.log('[LOGIN] Environment check:', {
+      DB_HOST: !!process.env.DB_HOST,
+      DB_PORT: !!process.env.DB_PORT,
+      DB_NAME: !!process.env.DB_NAME,
+      DB_USER: !!process.env.DB_USER,
+      DB_PASSWORD: !!process.env.DB_PASSWORD,
+      JWT_SECRET: !!process.env.JWT_SECRET,
+      NODE_ENV: process.env.NODE_ENV
+    });
+
     const { email, password } = req.body;
 
     if (!email || !password) {
       return res.status(400).json({ error: 'Email and password required' });
     }
 
+    console.log('[LOGIN] Attempting query for email:', email);
     // Query database for user
     const result = await pool.query(
       'SELECT id, email, password_hash, full_name, role, company_id FROM users WHERE email = $1 AND is_active = true',
       [email]
     );
+    console.log('[LOGIN] Query result:', result.rows.length, 'rows found');
 
     if (result.rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
@@ -90,9 +103,15 @@ async function handler(req, res) {
       token
     });
   } catch (err) {
-    console.error('Login error:', err);
+    console.error('[LOGIN] Error occurred:', err);
+    console.error('[LOGIN] Error stack:', err.stack);
+    console.error('[LOGIN] Error message:', err.message);
+    console.error('[LOGIN] Error code:', err.code);
+    
     return res.status(500).json({ 
       error: 'Internal server error',
+      message: err.message,
+      code: err.code,
       details: process.env.NODE_ENV === 'development' ? err.message : undefined
     });
   }
