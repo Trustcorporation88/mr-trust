@@ -1,18 +1,17 @@
 #!/bin/sh
-set -x
 
 echo "Installing root dependencies..."
-npm ci
+npm install
 
 cd frontend
 
 echo "Installing frontend dependencies..."
-npm ci
+npm install
 
 echo "Building frontend..."
 npm run build
 
-echo "Checking build output..."
-ls -la dist/ 2>/dev/null || echo "ERROR: dist directory not created"
+echo "Verifying build output..."
+test -d dist && echo "SUCCESS: dist directory created" || echo "ERROR: dist directory not found"
 
-echo "Build complete!"
+ls -la dist/ 2>/dev/null || true
