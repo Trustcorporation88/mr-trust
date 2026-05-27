@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd ./frontend && npm ci && npm run build"
+    "build": "npm --prefix=./frontend ci && npm --prefix=./frontend run build"
   },
   "engines": {
     "node": "24.x"
