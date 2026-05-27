@@ -5,7 +5,7 @@
       "runtime": "nodejs24.x"
     }
   },
-  "buildCommand": "npm install",
+  "buildCommand": "npm install && cd frontend && npm install && npm run build && cd ..",
   "trailingSlash": false,
   "routes": [
     {
@@ -13,7 +13,7 @@
       "dest": "/api/$1"
     },
     {
-      "src": "/(.*)",
+      "src": "/(?!api)(.*)",
       "dest": "/frontend/dist/index.html"
     }
   ],
