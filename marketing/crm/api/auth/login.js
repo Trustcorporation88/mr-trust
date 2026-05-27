@@ -2,24 +2,7 @@ const pkg = require('pg');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const { Pool } = pkg;
-
-// Initialize database connection
-const pool = new Pool({
-  host: process.env.DB_HOST || 'localhost',
-  port: process.env.DB_PORT || 5432,
-  database: process.env.DB_NAME || 'meishop_crm',
-  user: process.env.DB_USER || 'postgres',
-  password: process.env.DB_PASSWORD || 'postgres',
-  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
-});
-
-// CORS headers
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type'
-};
+const { Client } = pkg;
 
 async function handler(req, res) {
   // Handle CORS preflight
@@ -36,6 +19,7 @@ async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Content-Type', 'application/json');
 
+  let client;
   try {
     console.log('[LOGIN] Starting login process...');
     console.log('[LOGIN] Environment check:', {
@@ -54,15 +38,30 @@ async function handler(req, res) {
       return res.status(400).json({ error: 'Email and password required' });
     }
 
+    // Create database connection
+    client = new Client({
+      host: process.env.DB_HOST,
+      port: process.env.DB_PORT,
+      database: process.env.DB_NAME,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      ssl: { rejectUnauthorized: false }
+    });
+
+    console.log('[LOGIN] Connecting to database...');
+    await client.connect();
+    console.log('[LOGIN] Connected successfully');
+
     console.log('[LOGIN] Attempting query for email:', email);
     // Query database for user
-    const result = await pool.query(
+    const result = await client.query(
       'SELECT id, email, password_hash, full_name, role, company_id FROM users WHERE email = $1 AND is_active = true',
       [email]
     );
     console.log('[LOGIN] Query result:', result.rows.length, 'rows found');
 
     if (result.rows.length === 0) {
+      await client.end();
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
@@ -71,11 +70,12 @@ async function handler(req, res) {
     // Check password
     const validPassword = await bcrypt.compare(password, user.password_hash);
     if (!validPassword) {
+      await client.end();
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
     // Update last login
-    await pool.query(
+    await client.query(
       'UPDATE users SET last_login = NOW() WHERE id = $1',
       [user.id]
     );
@@ -91,6 +91,8 @@ async function handler(req, res) {
       process.env.JWT_SECRET || 'your-secret-key',
       { expiresIn: process.env.JWT_EXPIRE || '7d' }
     );
+
+    await client.end();
 
     return res.status(200).json({
       message: 'Login successful',
@@ -114,6 +116,14 @@ async function handler(req, res) {
       code: err.code,
       details: process.env.NODE_ENV === 'development' ? err.message : undefined
     });
+  } finally {
+    if (client) {
+      try {
+        await client.end();
+      } catch (err) {
+        console.error('[LOGIN] Error closing connection:', err);
+      }
+    }
   }
 }
 
