@@ -8,6 +8,6 @@ echo "Installing dependencies in frontend..."
 npm --prefix frontend ci
 
 echo "Building frontend..."
-npx --prefix frontend vite build
+./frontend/node_modules/.bin/vite build --outDir dist
 
 echo "Build complete!"
