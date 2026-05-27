@@ -1,20 +1,15 @@
 {
   "version": 2,
-  "public": "public",
   "functions": {
     "api/**/*.js": {
       "runtime": "nodejs24.x"
     }
   },
   "buildCommand": "npm install",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    },
-    {
-      "source": "/:path((?!api).*)",
-      "destination": "/index.html"
+      "src": "/api(.*)",
+      "dest": "/api$1"
     }
   ]
 }
