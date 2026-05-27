@@ -5,18 +5,6 @@
     {
       "src": "/api/(.*)",
       "dest": "/api/$1"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/frontend/dist/assets/$1"
-    },
-    {
-      "src": "/(.*\\.(js|css|svg|png|jpg|jpeg|gif|webp)$)",
-      "dest": "/frontend/dist/$1"
-    },
-    {
-      "src": "/(?!api)(.*)",
-      "dest": "/frontend/dist/index.html"
     }
   ]
 }
