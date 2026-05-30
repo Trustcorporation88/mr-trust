@@ -55,7 +55,7 @@
                 </p>
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-primary">Começar trial grátis</a>
-                    <a href="#" class="btn btn-secondary" data-demo-url>Abrir dashboard</a>
+                    <a href="#dashboard" class="btn btn-secondary" data-demo-url data-demo-label-fallback="Como acessar o dashboard">Abrir dashboard</a>
                     <a href="#" class="btn btn-ghost" data-github-url>GitHub</a>
                 </div>
                 <div class="hero-trust">
@@ -309,6 +309,28 @@
             </div>
         </section>
 
+        <section class="features" id="dashboard">
+            <div class="container" style="max-width:720px">
+                <p class="section-label">Dashboard</p>
+                <h2>Acessar o MR TRUST OSINT</h2>
+                <p style="color:var(--muted);margin-bottom:1.25rem;font-size:0.95rem">
+                    O app roda em <strong>Streamlit</strong>. Na web pública ainda não há servidor online —
+                    use o trial pelo formulário ou rode localmente:
+                </p>
+                <pre style="background:var(--bg-elevated);border:1px solid var(--line);border-radius:8px;padding:1rem;overflow-x:auto;font-size:0.85rem;color:var(--muted);text-align:left"><code>cd OSINT
+..\ .venv\Scripts\streamlit.exe run web_app.py --server.port 8511
+# Abra http://localhost:8511</code></pre>
+                <p style="color:var(--muted);margin-top:1rem;font-size:0.88rem">
+                    Quando publicar no Streamlit Cloud, coloque a URL em
+                    <code style="color:var(--gold)">osint-site/assets/site-config.js</code> →
+                    <code style="color:var(--gold)">demoDashboardUrl</code>.
+                </p>
+                <div style="text-align:center;margin-top:1.5rem">
+                    <a href="#contact" class="btn btn-primary">Solicitar acesso / trial</a>
+                </div>
+            </div>
+        </section>
+
         <section class="features" id="legal">
             <div class="container" style="max-width:720px;text-align:center">
                 <p class="section-label">Responsabilidade</p>
@@ -330,7 +352,7 @@
                         <p>10 buscas para explorar todos os módulos. Sem cartão de crédito. Resposta em até 1 dia útil.</p>
                         <ul class="contact-list">
                             <li>📧 <a href="mailto:sales@mrtrust.com" data-contact-email data-replace-text>sales@mrtrust.com</a></li>
-                            <li>🖥️ <a href="#" data-demo-url>Dashboard (Streamlit)</a></li>
+                            <li>🖥️ <a href="#dashboard" data-demo-url>Dashboard — como acessar</a></li>
                             <li>⌨️ <a href="#" data-github-url>Repositório no GitHub</a></li>
                         </ul>
                     </div>

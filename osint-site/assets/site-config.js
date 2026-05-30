@@ -13,6 +13,12 @@ window.MR_TRUST_SITE = {
   siteUrl: "https://mr-trust.vercel.app",
   previewUrl: "https://mr-trust-git-master-trustcorporation88s-projects.vercel.app",
   trialDays: 14,
-  demoDashboardUrl: "http://localhost:8511",
+  /**
+   * Dashboard ONLINE (Streamlit Cloud, etc.). Deixe "" até publicar.
+   * Ex.: "https://mr-trust-osint.streamlit.app"
+   */
+  demoDashboardUrl: "",
+  /** Só para quem abre o site em localhost */
+  demoDashboardLocal: "http://localhost:8511",
   githubUrl: "https://github.com/Trustcorporation88/mr-trust",
 };
