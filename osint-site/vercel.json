@@ -16,9 +16,21 @@
       ]
     },
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/mr-trust.css",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/assets/site-config.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/assets/site.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
       ]
     }
   ],
@@ -27,9 +39,16 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/app",
+      "destination": "https://trustcorporation88-mr-trust-streamlit-app-ppasek.streamlit.app/",
+      "permanent": false
+    },
+    {
+      "source": "/dashboard",
+      "destination": "https://trustcorporation88-mr-trust-streamlit-app-ppasek.streamlit.app/",
+      "permanent": false
     }
-  ],
-  "rewrites": [
-    { "source": "/app", "destination": "/app.html" }
   ]
 }
