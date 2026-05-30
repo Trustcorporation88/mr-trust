@@ -84,19 +84,19 @@
   }
 
   function mailtoFallback(data) {
-    var product = data.get("produto") || "Mr.Holmes";
+    var product = data.get("produto") || cfg.product || "MR TRUST OSINT";
     var subject = encodeURIComponent(
-      product + " — " + (data.get("company") || data.get("name") || "novo lead")
+      product + " — " + (data.get("plan") || data.get("name") || "novo lead")
     );
     var body = encodeURIComponent(
       "Nome: " +
         data.get("name") +
         "\nE-mail: " +
         data.get("email") +
-        "\nEmpresa: " +
-        (data.get("company") || "—") +
         "\nPlano: " +
-        data.get("plan") +
+        (data.get("plan") || "—") +
+        "\nUso: " +
+        (data.get("use_case") || "—") +
         "\n\n" +
         (data.get("message") || "")
     );
@@ -108,7 +108,12 @@
     var id = cfg.formspreeFormId;
     var url = "https://formspree.io/f/" + id;
     var data = new FormData(form);
-    data.append("_subject", "Trial Mr.Holmes — " + (data.get("company") || "site"));
+    data.append(
+      "_subject",
+      (cfg.product || "MR TRUST OSINT") +
+        " — " +
+        (data.get("plan") || data.get("name") || "site")
+    );
 
     var res = await fetch(url, {
       method: "POST",
@@ -131,7 +136,7 @@
     );
     if (submitBtn) {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Solicitar trial";
+      submitBtn.textContent = "Ativar trial de 14 dias";
     }
   }
 
@@ -184,6 +189,9 @@
 
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
+      if (form.querySelector("[name=_gotcha]") && form.querySelector("[name=_gotcha]").value) {
+        return;
+      }
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
@@ -209,7 +217,7 @@
           );
           if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.textContent = "Solicitar trial";
+            submitBtn.textContent = "Ativar trial de 14 dias";
           }
         }
       } catch (err) {
@@ -221,7 +229,7 @@
         );
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = "Solicitar trial";
+          submitBtn.textContent = "Ativar trial de 14 dias";
         }
       }
     });

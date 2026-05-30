@@ -5,11 +5,12 @@
 window.MR_TRUST_SITE = {
   product: "MR TRUST OSINT",
   contactEmail: "sales@mrtrust.com",
+  /** Formspree: https://formspree.io → New Form → ID em formspree.io/f/SEU_ID */
   formspreeFormId: "",
   hubspotPortalId: "",
   hubspotFormId: "",
   siteUrl: "https://trustcorporation88.github.io/mr-trust/",
-  /** Dashboard: cd OSINT && streamlit run web_app.py → porta 8511 */
+  trialDays: 14,
   demoDashboardUrl: "http://localhost:8511",
   githubUrl: "https://github.com/Trustcorporation88/mr-trust",
 };
