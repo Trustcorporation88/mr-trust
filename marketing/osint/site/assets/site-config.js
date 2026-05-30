@@ -9,6 +9,7 @@ window.MR_TRUST_SITE = {
   formspreeFormId: "",
   hubspotPortalId: "",
   hubspotFormId: "",
+  /** Atualize após deploy na Vercel (ex: https://mr-trust-osint.vercel.app) */
   siteUrl: "https://trustcorporation88.github.io/mr-trust/",
   trialDays: 14,
   demoDashboardUrl: "http://localhost:8511",

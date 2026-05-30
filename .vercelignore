@@ -1,0 +1,12 @@
+# Ignorado se alguém importar o repo com Root Directory na raiz (evita upload gigante).
+crm-2026
+CRM
+OSINT
+landing
+marketing/crm
+**/.venv
+**/.venv-*
+**/node_modules
+**/__pycache__
+**/.pytest_cache
+**/*.sqlite3

@@ -26,7 +26,20 @@ cd c:\Mr.Holmes\OSINT
 
 ## Publicar
 
-Push em `main` com alterações em `marketing/osint/site/**` dispara o workflow **Deploy OSINT site (GitHub Pages)**.
+### Vercel (recomendado para produção)
+
+Guia passo a passo: **[VERCEL.md](./VERCEL.md)**
+
+Resumo na importação do repo:
+
+- **Root Directory:** `marketing/osint/site`
+- **Framework:** Other
+- **Build / Install:** vazio
+- **Output:** `.`
+
+### GitHub Pages (alternativa)
+
+Push em `main` em `marketing/osint/site/**` dispara **Deploy OSINT site (GitHub Pages)** → https://trustcorporation88.github.io/mr-trust/
 
 ## Testar local
 
