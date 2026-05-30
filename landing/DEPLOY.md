@@ -1,4 +1,9 @@
-# Publicar a landing Mr.Holmes
+# Landing Mr.Holmes (CRM) — deploy local / Netlify manual
+
+> **GitHub Pages deste repositório publica apenas o site OSINT** em `marketing/osint/site/`.  
+> O CRM não é implantado pelo workflow do GitHub. Use Netlify/Vercel abaixo se quiser hospedar esta pasta.
+
+# Publicar a landing Mr.Holmes (CRM)
 
 ## Configuração (obrigatório antes de ir ao ar)
 

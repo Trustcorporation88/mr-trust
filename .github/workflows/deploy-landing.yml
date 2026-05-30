@@ -1,13 +1,12 @@
-# Publica a pasta landing/ no GitHub Pages
-# Ative em: Settings → Pages → Build and deployment → GitHub Actions
+# Site público: MR TRUST OSINT apenas (CRM é separado e não é publicado aqui).
 
-name: Deploy landing (GitHub Pages)
+name: Deploy OSINT site (GitHub Pages)
 
 on:
   push:
     branches: [main, master]
     paths:
-      - "landing/**"
+      - "marketing/osint/site/**"
       - ".github/workflows/deploy-landing.yml"
   workflow_dispatch:
 
@@ -33,7 +32,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: landing
+          path: marketing/osint/site
 
       - id: deployment
         uses: actions/deploy-pages@v4
