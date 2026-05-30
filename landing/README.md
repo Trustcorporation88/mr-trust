@@ -7,19 +7,21 @@
 ## 📁 What's Inside
 
 ### 1. 🎯 **index.html** - Landing Page
-**Status**: ✅ Live and ready
-- Professional marketing website
-- Value proposition + benefits
-- Product comparison (vs Salesforce, HubSpot, Pipedrive)
-- Use cases by industry
-- Pricing tiers
-- ROI metrics
+**Status**: ✅ Live and ready (v2 — tema escuro MR TRUST)
+- Visual alinhado ao dashboard OSINT (vermelho `#e50914`, fundo escuro)
+- SEO: meta description + Open Graph
+- Menu mobile + acessibilidade (skip link, foco visível)
+- Formulário de leads (trial via `mailto:` — troque o e-mail em `CONTACT_EMAIL` no script)
+- CTAs funcionais (âncoras + contato)
+- Link para landing OSINT em `../marketing/osint/landing.html`
 
 **How to use**:
 - Open in browser: `file:///c:/Mr.Holmes/landing/index.html`
-- Share with prospects: Deploy on web hosting
-- A/B test different versions
-- Collect leads: Add lead capture form
+- Share with prospects: Deploy on web hosting (Netlify, Vercel, GitHub Pages)
+- E-mail e integrações: editar `assets/site-config.js` (padrão: `sales@mrtrust.com`)
+- Configurar `assets/site-config.js` (e-mail, Formspree, URL do demo Streamlit)
+- Publicar: ver **`DEPLOY.md`** (GitHub Pages, Netlify, Vercel)
+- OSINT: `osint.html` (mesmo tema visual)
 - Drive traffic: SEO + paid ads
 
 **Time to implement**: 0 (ready now)

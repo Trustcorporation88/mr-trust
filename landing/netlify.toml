@@ -1,0 +1,13 @@
+# Deploy: arraste a pasta landing/ no Netlify ou conecte o repositório com:
+# Base directory: landing
+# Publish directory: . (ou landing se root do site)
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
