@@ -1,6 +1,9 @@
-PyQRCode==1.2.1
+streamlit>=1.32.0
+matplotlib>=3.8.0
+networkx>=3.2
 phonenumbers==8.12.25
 requests>=2.31.0
-pdfkit==1.0.0
-beautifulsoup4==4.9.3
+beautifulsoup4>=4.12.0
+PyQRCode==1.2.1
 stem>=1.4.0
+pdfkit==1.0.0

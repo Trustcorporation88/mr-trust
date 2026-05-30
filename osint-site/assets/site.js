@@ -80,16 +80,12 @@
           el.textContent = "Abrir dashboard";
         }
       } else {
-        el.href = "#dashboard";
+        el.href = "app.html";
         el.removeAttribute("target");
         el.removeAttribute("rel");
-        el.setAttribute(
-          "title",
-          "Dashboard online em breve — veja como rodar na sua máquina"
-        );
-        if (el.classList.contains("btn")) {
-          var label = el.getAttribute("data-demo-label-fallback");
-          if (label) el.textContent = label;
+        el.setAttribute("title", "Abrir página do dashboard (publicar ou rodar local)");
+        if (el.classList.contains("btn-secondary")) {
+          el.textContent = "Abrir dashboard";
         }
       }
     });
