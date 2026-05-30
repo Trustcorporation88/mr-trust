@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — MR TRUST OSINT</title>
+    <meta name="theme-color" content="#0b0b0f">
+    <link rel="stylesheet" href="assets/mr-trust.css">
+    <style>
+        .launcher { max-width: 640px; margin: 4rem auto; padding: 0 1.25rem; text-align: center; }
+        .launcher h1 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+        .launcher p { color: var(--muted); margin-bottom: 1.5rem; }
+        .launcher .actions { display: flex; flex-direction: column; gap: 0.75rem; }
+        .launcher pre { text-align: left; margin-top: 1.5rem; }
+        .status { margin-top: 1rem; padding: 1rem; border-radius: 8px; display: none; }
+        .status.loading { display: block; background: rgba(255,204,102,0.1); border: 1px solid var(--gold); color: var(--gold); }
+        .status.error { display: block; background: rgba(239,68,68,0.1); border: 1px solid #ef4444; color: #ef4444; }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a class="logo" href="index.html"><span>◆</span> MR TRUST OSINT</a>
+                <a href="index.html" class="btn btn-ghost" style="padding:0.5rem 1rem">← Voltar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="launcher">
+        <h1>Dashboard OSINT</h1>
+        <p id="lead">Carregando…</p>
+        <div class="actions" id="actions"></div>
+        <p class="status" id="status" role="status"></p>
+        <pre id="local-cmd" style="display:none"><code>cd OSINT
+..\.venv\Scripts\streamlit.exe run web_app.py --server.port 8511</code></pre>
+    </main>
+
+    <script src="assets/site-config.js"></script>
+    <script>
+        (function () {
+            var cfg = window.MR_TRUST_SITE || {};
+            var pub = (cfg.demoDashboardUrl || "").trim();
+            var local = cfg.demoDashboardLocal || "http://localhost:8511";
+            var isPub = pub && !/localhost|127\.0\.0\.1/i.test(pub);
+            var lead = document.getElementById("lead");
+            var actions = document.getElementById("actions");
+            var status = document.getElementById("status");
+            var localCmd = document.getElementById("local-cmd");
+
+            var deployUrl =
+                "https://share.streamlit.io/deploy?repository=Trustcorporation88/mr-trust" +
+                "&branch=master&mainModule=streamlit_app.py";
+
+            function btn(href, text, primary) {
+                var a = document.createElement("a");
+                a.href = href;
+                a.className = "btn " + (primary ? "btn-primary" : "btn-secondary");
+                a.textContent = text;
+                if (href.indexOf("http") === 0) {
+                    a.target = "_blank";
+                    a.rel = "noopener noreferrer";
+                }
+                actions.appendChild(a);
+            }
+
+            if (isPub) {
+                lead.textContent = "Redirecionando para o dashboard online…";
+                status.className = "status loading";
+                status.textContent = "Abrindo " + pub;
+                window.location.replace(pub);
+                return;
+            }
+
+            lead.textContent =
+                "O dashboard ainda não está na nuvem. Publique no Streamlit (grátis, ~3 min) ou rode no seu PC.";
+            btn(deployUrl, "Publicar dashboard no Streamlit Cloud", true);
+            btn(local, "Tentar localhost:8511 (só no seu PC)", false);
+            btn("index.html#contact", "Solicitar trial / suporte", false);
+            localCmd.style.display = "block";
+
+            status.className = "status error";
+            status.textContent =
+                "Após publicar no Streamlit, copie a URL (ex: https://mr-trust-osint.streamlit.app) para assets/site-config.js → demoDashboardUrl e redeploy na Vercel.";
+        })();
+    </script>
+</body>
+</html>

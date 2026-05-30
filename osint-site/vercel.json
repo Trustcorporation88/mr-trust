@@ -28,5 +28,8 @@
       "destination": "/",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    { "source": "/app", "destination": "/app.html" }
   ]
 }
