@@ -38,20 +38,59 @@
     });
   }
 
+  function isLocalHost(hostname) {
+    return hostname === "localhost" || hostname === "127.0.0.1";
+  }
+
+  function isLocalUrl(url) {
+    return /localhost|127\.0\.0\.1/i.test(url || "");
+  }
+
+  /** URL do dashboard: online > local (se visitante local) > âncora #dashboard */
+  function resolveDemoUrl() {
+    var pub = (cfg.demoDashboardUrl || "").trim();
+    var local = (cfg.demoDashboardLocal || "http://localhost:8511").trim();
+    var onLocalViewer = isLocalHost(window.location.hostname);
+
+    if (pub && !isLocalUrl(pub)) {
+      return pub;
+    }
+    if (onLocalViewer && local) {
+      return local;
+    }
+    return "";
+  }
+
   /** CTAs de demo (Streamlit) */
   function applyDemoLinks() {
-    var demoUrl = cfg.demoDashboardUrl;
-    if (!demoUrl) return;
+    var demoUrl = resolveDemoUrl();
 
     qsa("[data-demo-url]").forEach(function (el) {
-      el.href = demoUrl;
-      if (demoUrl.indexOf("localhost") !== -1) {
+      if (demoUrl) {
+        el.href = demoUrl;
         el.setAttribute("target", "_blank");
         el.setAttribute("rel", "noopener noreferrer");
-        el.setAttribute("title", "Abre o dashboard local (Streamlit deve estar rodando)");
+        el.setAttribute(
+          "title",
+          isLocalUrl(demoUrl)
+            ? "Dashboard local — Streamlit deve estar rodando na porta 8511"
+            : "Abrir dashboard online"
+        );
+        if (el.classList.contains("btn-secondary") && el.textContent.indexOf("dashboard") !== -1) {
+          el.textContent = "Abrir dashboard";
+        }
       } else {
-        el.setAttribute("target", "_blank");
-        el.setAttribute("rel", "noopener noreferrer");
+        el.href = "#dashboard";
+        el.removeAttribute("target");
+        el.removeAttribute("rel");
+        el.setAttribute(
+          "title",
+          "Dashboard online em breve — veja como rodar na sua máquina"
+        );
+        if (el.classList.contains("btn")) {
+          var label = el.getAttribute("data-demo-label-fallback");
+          if (label) el.textContent = label;
+        }
       }
     });
   }
