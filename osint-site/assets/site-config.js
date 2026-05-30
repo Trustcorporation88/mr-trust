@@ -15,7 +15,7 @@ window.MR_TRUST_SITE = {
   trialDays: 14,
   /** Dashboard Streamlit Cloud (produção) */
   demoDashboardUrl:
-    "https://trustcorporation88-mr-trust-streamlit-app-ppasek.streamlit.app/",
+    "https://trustcorporation88-mr-trust-streamlit-app-ppasek.streamlit.app",
   /** Só para quem abre o site em localhost */
   demoDashboardLocal: "http://localhost:8511",
   githubUrl: "https://github.com/Trustcorporation88/mr-trust",
